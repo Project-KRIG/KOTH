@@ -1,0 +1,142 @@
+body {
+  position: absolute;
+  font-family: "Arial", Helvetica, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  padding: 0px;
+  margin: 0px;
+  left: 0px;
+  top:0px;
+}
+
+#KOTHUI {
+  display: block;
+}
+
+.Container {
+  width: 100%;
+  height: 100%;
+}
+
+#Welcome {
+  display: none;
+  position: absolute;
+  width: 25%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(135, 135, 135, 0.5);
+  color: white;
+  border-style: solid;
+  border-width: 0.2vh;
+  border-color: black;
+  border-radius: 3vh;
+}
+
+h1 {
+  padding: 0px;
+  margin: 1vh;
+  font-size: 6vh;
+  color: black;
+}
+
+#Welcome p {
+  padding: 0px;
+  padding-left: 1vh;
+  padding-right: 1vh;
+  margin: 1vh;
+  font-size: 2.5vh;
+}
+
+#Welcome Button {
+  background-color: #4CAF50;
+  border: none;
+  width: 40%;
+  height: 10%;
+  font-size: 3vh;
+  padding: 2vh;
+  margin: 3vh;
+}
+
+#ModelSelect {
+  display: none;
+  position: absolute;
+  width: 25%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(135, 135, 135, 0.5);
+  color: white;
+  border-style: solid;
+  border-width: 0.2vh;
+  border-color: black;
+  border-radius: 3vh;
+}
+
+#ModelSelect h1 {
+  font-size: 3vh;
+}
+
+#ModelSelect Button {
+  background-color: #03A9F4;
+  border: none;
+  width: 40%;
+  height: 10%;
+  font-size: 3vh;
+  padding: 2vh;
+  margin: 1vh;
+}
+
+#ChooseTeam {
+  display: none;
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(135, 135, 135, 0.5);
+  color: white;
+  border-style: solid;
+  border-width: 0.2vh;
+  border-color: black;
+  border-radius: 3vh;
+}
+
+#ChooseTeam Button {
+  background-color: #03A9F4;
+  border: none;
+  width: 40%;
+  height: 10%;
+  font-size: 3vh;
+  padding: 2vh;
+  margin: 1vh;
+}
+
+#Points {
+  display: block;
+  position: absolute;
+  width: 10%;
+  left: 100%;
+  top: 100%;
+  transform: translate(-110%, -110%);
+  background-color: rgba(135, 135, 135, 0.5);
+  color: white;
+  border-style: solid;
+  border-width: 0.2vh;
+  border-color: black;
+  border-radius: 3vh;
+}
+
+#Points h1 {
+  font-size: 2vh;
+}
+
+#Points p {
+  font-size: 1.5vh;
+  font-weight: bold;
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}

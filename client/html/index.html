@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<script src="nui://koth/client/html/listener.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="nui://koth/client/html/style.css">
+		<script src="listener.js" type="text/javascript"></script><!-- DELETE LATER-->
+		<link rel="stylesheet" href="style.css"> <!-- DELETE LATER-->
+	</head>
+	<body>
+		<div id="KOTHUI" class="Container">
+			<div id="Welcome">
+				<center>
+					<h1>KOTH</h1>
+					<p>Welcome to FiveM KOTH made by Neco.</br></br>King of the Hill is a "hold the area" game mode where three teams compete against each other. The team with the most players in the designated area will gain points. If there are equal amounts of allied and enemy team members in the area, then no points are awarded until someone takes the lead. Once a team has 100 points it is game over.</p>
+					<button onclick="StartPressed()">Start</button>
+				</center>
+			</div>
+			<div id="ModelSelect">
+				<center>
+					<h1>Please select your preferred gender:</h1>
+					<button onclick="Gender('Male')">Male</button><button onclick="Gender('Female')">Female</button>
+				</center>
+			</div>
+			<div id="ChooseTeam">
+				<center>
+					<h1>Select a team:</h1>
+					<button id="Yellow"style="background-color: #FBC02D" onclick="Team('Yellow')">Yellow</button>
+					<button id="Blue" style="background-color: #03A9F4" onclick="Team('Blue')">Blue</button>
+					<button id="Green" style="background-color: #4CAF50" onclick="Team('Green')">Green</button>
+				</center>
+			</div>
+			<div id="Points">
+				<center>
+					<h1>Points</h1>
+					<p><span style="color: #FBC02D">Yellow:</span> <span id="YellowPoints">0</span></p>
+					<p><span style="color: #4CAF50">Green:</span> <span id="GreenPoints">0</span></p>
+					<p><span style="color: #03A9F4">Blue:</span> <span id="BluePoints">0</span></p>
+				</center>
+			</div>
+		</div>
+	</body>
+</html>
