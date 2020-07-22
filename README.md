@@ -62,4 +62,4 @@ Roadmap
 - [ ] Add a use for money to the gamemode
 - [ ] Allow the player to see thier rank, XP and money
 
-If you have any sugestions to add to the resource please add them to the forum post on the fivem forums.
+If you have any sugestions to add to the resource please add them to the forum post on the fivem forums or submit a feature request using the [issues](https://github.com/The-Neco/KOTH/issues) section of github.
