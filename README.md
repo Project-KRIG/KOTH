@@ -63,3 +63,7 @@ Roadmap
 - [ ] Allow the player to see thier rank, XP and money
 
 If you have any sugestions to add to the resource please add them to the forum post on the fivem forums or submit a feature request using the [issues](https://github.com/The-Neco/KOTH/issues) section of github.
+
+Want to contribute?
+
+Submit a pull request and I'll take a look, if it is something that will benifit the resource then I will consider adding it to the master branch.
