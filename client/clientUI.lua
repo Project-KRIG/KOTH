@@ -1,10 +1,3 @@
---Citizen.CreateThread(function()
---  while true do
---    Citizen.Wait(0)
---    DrawRect(0.8, 0.7, 0.15, 0.25, 255, 255, 255, 1.0)
---  end
---end)
-
 RegisterNetEvent("KOTH:OpenStartUi")
 AddEventHandler("KOTH:OpenStartUi", function()
   SendNUIMessage({
@@ -38,7 +31,7 @@ RegisterNUICallback("GenderSelect", function(data, cb)
   else
     SetResourceKvp("KOTH:Model", "mp_f_freemode_01")
   end
-  SetNutral()
+  KOTH.SetNutral()
   SendNUIMessage({
     ChangeModel = false,
     KOTHUI = true,
@@ -98,6 +91,15 @@ AddEventHandler("KOTH:UpdatePlayerCount", function(tab)
   end
 end)
 
+RegisterNetEvent("KOTH:ShowWin")
+AddEventHandler("KOTH:ShowWin", function(team)
+  SendNUIMessage({
+    Win = true,
+    WinningTeam = team
+  })
+  SetTimeout(5000, function() SendNUIMessage({Win = false}) end)
+end)
+
 
 RegisterNetEvent("KOTH:UpdatePoints")
 AddEventHandler("KOTH:UpdatePoints", function(tab)
@@ -108,15 +110,3 @@ AddEventHandler("KOTH:UpdatePoints", function(tab)
     Blue = tab.Blue,
   })
 end)
-
-RegisterCommand('TestTeam', function(source, args, rawCommand)
-  SendNUIMessage({
-    KOTHUI = true,
-    ChooseTeam = true,
-  })
-end, false)
-
---Citizen.CreateThread(function()
---  Citizen.Wait(1000)
---  SetNuiFocus(false, false)
---end)

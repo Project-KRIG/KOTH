@@ -1,5 +1,3 @@
-var selected = "";
-
 $(function()
 {
     window.addEventListener('message', function(event)
@@ -41,6 +39,13 @@ $(function()
         document.getElementById("YellowPoints").innerHTML = event.data.Yellow
         document.getElementById("GreenPoints").innerHTML = event.data.Green
         document.getElementById("BluePoints").innerHTML = event.data.Blue
+      }
+      if (event.data.Win == true) {
+        document.getElementById("Win").style.display = "block";
+        document.getElementById("WinText").innerHTML = "<span class='" + event.data.WinningTeam + "'>" + event.data.WinningTeam + "</span> team has won.";
+      } else if (event.data.Win == false) {
+        document.getElementById("Win").style.display = "none";
+        document.getElementById("WinText").innerHTML = "";
       }
     });
 });

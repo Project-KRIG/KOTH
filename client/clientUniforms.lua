@@ -35,9 +35,10 @@ AddEventHandler("KOTH:SetUniform", function(tab, team)
     SetPedComponentVariation(PlayerPedId(), 4, 121, tab.Legs, 2)
     SetPedComponentVariation(PlayerPedId(), 6, 93, 0, 2)
   end
+  SetEntityCoords(PlayerPedId(), KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.x, KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.y, KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.z)
 end)
 
-function SetNutral()
+KOTH.SetNutral = function()
   local model = `mp_m_freemode_01`
   local male = true
   local saved = GetResourceKvpString("KOTH:Model")

@@ -3,7 +3,7 @@ Citizen.CreateThread(function()
     Citizen.Wait(500)
   end
   Citizen.Wait(1000)
-  KOTH.SetMap(#KOTH.Maps)
+  KOTH.SetMap(math.random(#KOTH.Maps))
   while true do
     Citizen.Wait(1000)
     KOTH.PointTicker = KOTH.PointTicker + 1
@@ -23,8 +23,10 @@ Citizen.CreateThread(function()
     KOTH.PrioCircle.Count = KOTH.PrioCircle.Count + 1
     if KOTH.PrioCircle.Count == KOTH.PrioZoneTimer then
       local CircleCoords = KOTH.Circle.Coords
-      local newx = CircleCoords.x + math.random(-90, 90)
-      local newy = CircleCoords.y + math.random(-90, 90)
+      local max = KOTH.Circle.Size/3.3
+      local min = max - (max * 2)
+      local newx = CircleCoords.x + math.random(round2(min), round2(max))
+      local newy = CircleCoords.y + math.random(round2(min), round2(max))
       local newCoords = {x = newx, y = newy, z = KOTH.PrioCircle.Coords.z}
       TriggerClientEvent("KOTH:MovePriorityCircle", -1, newCoords)
       KOTH.PrioCircle.Coords = newCoords
@@ -33,6 +35,10 @@ Citizen.CreateThread(function()
     end
   end
 end)
+
+function round2(num, numDecimalPlaces)
+	return tonumber(string.format("%." .. (numDecimalPlaces or 0) .. "f", num))
+end
 
 
 KOTH.InCircle = function(player)
@@ -97,7 +103,3 @@ KOTH.CountPlayersInCircle = function()
   local table = {Total = (YellowCount + BlueCount + GreenCount), Yellow = YellowCount, Blue = BlueCount, Green = GreenCount}
   return table
 end
-
---PerformHttpRequest("https://api.ipify.org/", function (errorCode, resultData, resultHeaders)
---  print(resultData)
---end)

@@ -3,7 +3,6 @@ Citizen.CreateThread(function()
     Citizen.Wait(500)
   end
   Citizen.Wait(1000)
-  KOTH.SetMap(1)
   KOTH.XPTicker()
   while true do
     Citizen.Wait(0)
@@ -11,6 +10,11 @@ Citizen.CreateThread(function()
     DrawMarker(1, KOTH.PrioCircle.Coords.x, KOTH.PrioCircle.Coords.y, KOTH.PrioCircle.Coords.z-20.0, 0, 0, 0, 0, 0, 0, KOTH.PrioCircle.Size, KOTH.PrioCircle.Size, 100.0, 230, 173, 18, 70, false, false, 0, false)
     KOTH.InCircle()
   end
+end)
+
+RegisterNetEvent("KOTH:SetMap")
+AddEventHandler("KOTH:SetMap", function(map)
+  KOTH.SetMap(map)
 end)
 
 RegisterNetEvent("KOTH:MovePriorityCircle")

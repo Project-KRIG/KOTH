@@ -4,6 +4,8 @@ KOTH.Debug = true
 KOTH.XPTimer = 20 -- Time in seconds it takes to gain XP while in the zone
 KOTH.PointTimer = 5 -- Time in seconds it takes for the winning team to gain a point
 KOTH.PrioZoneTimer = 60 -- Time in seconds it takes for the Priority Circle to move
+KOTH.WinThreshold = 5 -- Amount of points required to win
+KOTH.Spawn = {x = 0.0, y = 0.0, z = 0.0} -- Set spawn for players who have not selected a team.
 
 --DO NOT TOUCH
 KOTH.Teams = {}
@@ -37,6 +39,34 @@ KOTH.PrioCircle = {
   Size = 50.0,
   PlayersInside = {}
 }
+
+KOTH.ResetGame = function()
+  KOTH.PrioCircle.Count = 0
+  KOTH.Circle.PlayersInside = {}
+  KOTH.PrioCircle.PlayersInside = {}
+  KOTH.Teams["Yellow"].Players = {}
+  KOTH.Teams["Green"].Players = {}
+  KOTH.Teams["Blue"].Players = {}
+  KOTH.Teams["Yellow"].Points = 0
+  KOTH.Teams["Green"].Points = 0
+  KOTH.Teams["Blue"].Points = 0
+  if IsDuplicityVersion() then
+    KOTH.SetMap(math.random(#KOTH.Maps))
+    TriggerClientEvent("KOTH:ResetGame", -1)
+    TriggerClientEvent("KOTH:UpdatePoints", -1, {Yellow = KOTH.Teams["Yellow"].Points, Green = KOTH.Teams["Green"].Points, Blue = KOTH.Teams["Blue"].Points})
+  else
+    SetEntityCoords(PlayerPedId(), KOTH.Spawn.x, KOTH.Spawn.y, KOTH.Spawn.z)
+    KOTH.SetNutral()
+    TriggerServerEvent('KOTH:ClientInitialized', KOTH.GetPlayerLevel(), KOTH.GetPlayerXP())
+    TriggerEvent("KOTH:OpenStartUi")
+  end
+end
+
+if not IsDuplicityVersion() then
+  RegisterNetEvent("KOTH:ResetGame")
+  AddEventHandler("KOTH:ResetGame", KOTH.ResetGame)
+end
+
 KOTH.CurrentTeam = "None"
 KOTH.PointTicker = 0
 KOTH.Winning = "None"

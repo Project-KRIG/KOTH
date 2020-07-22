@@ -140,3 +140,33 @@ h1 {
 		-1px 1px 0 #000,
 		1px 1px 0 #000;
 }
+
+.Green {
+  color: #4CAF50
+}
+
+.Blue {
+  color: #03A9F4
+}
+
+.Yellow {
+  color: #FBC02D
+}
+
+#Win h1 {
+  font-size: 6vh;
+  color: white;
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+#Win {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

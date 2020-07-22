@@ -35,6 +35,14 @@ KOTH.SetPlayerDeaths = function(deaths)
   SetResourceKvpInt("KOTH:Deaths", deaths)
 end
 
+KOTH.GetMoney = function()
+  return GetResourceKvpInt("KOTH:Money")
+end
+
+KOTH.SetMoney = function(money)
+  SetResourceKvpInt("KOTH:Money", money)
+end
+
 KOTH.SetPlayerModel = function(male)
   if male then
     SetResourceKvp("KOTH:Model", "mp_m_freemode_01")

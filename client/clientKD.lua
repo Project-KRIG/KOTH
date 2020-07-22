@@ -2,6 +2,7 @@ KOTH.GetKill = function()
   local Kills = KOTH.GetPlayerKills() + 1
   KOTH.SetPlayerKills(Kills)
   KOTH.AddXP(100)
+  KOTH.SetMoney((KOTH.GetMoney() - 50))
 end
 
 KOTH.PlayerDied = function()
@@ -29,7 +30,6 @@ end)
 
 KOTH.SpawnPoint = function()
   TriggerEvent("KOTH:SetUniform", KOTH.Teams[KOTH.CurrentTeam].Colors, KOTH.CurrentTeam)
-  SetEntityCoords(PlayerPedId(), KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.x, KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.y, KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.z)
 end
 
 RegisterNetEvent("playerSpawned")

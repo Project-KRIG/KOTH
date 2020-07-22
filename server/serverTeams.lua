@@ -51,18 +51,10 @@ KOTH.AddTeamPoints = function(team, amount)
   KOTH.Teams[team].Points = KOTH.Teams[team].Points + 1
   TriggerClientEvent("KOTH:UpdatePoints", -1, {Yellow = KOTH.Teams["Yellow"].Points, Green = KOTH.Teams["Green"].Points, Blue = KOTH.Teams["Blue"].Points})
   KOTH.DebugPrint(team .. " now has " .. KOTH.Teams[team].Points .. " points.")
-end
-
-RegisterCommand('JoinTeam', function(source, args, rawCommand)
-  KOTH.JoinTeam(tonumber(source), args[1])
-end, false)
-
-RegisterCommand('Bring', function(source, args, rawCommand)
-  if args[1] == "-1" then
-    for _, player in ipairs(GetPlayers()) do
-      SetEntityCoords(GetPlayerPed(player), GetEntityCoords(GetPlayerPed(source)))
-    end
-  else
-    SetEntityCoords(GetPlayerPed(tonumber(args[1])), GetEntityCoords(GetPlayerPed(source)))
+  if KOTH.Teams[team].Points == KOTH.WinThreshold then
+    KOTH.DebugPrint(team .. " won.")
+    TriggerClientEvent("KOTH:ShowWin", -1, team)
+    Citizen.Wait(5000)
+    KOTH.ResetGame()
   end
-end, false)
+end
