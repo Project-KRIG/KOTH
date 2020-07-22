@@ -4,7 +4,7 @@ games { "gta5" }
 name "KOTH"
 author 'Neco (Lewis)'
 description 'A standalone King Of The Hill resource.'
-version '0.1'
+version '1.0'
 
 ui_page 'client/html/index.html'
 
