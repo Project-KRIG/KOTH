@@ -4,7 +4,7 @@ KOTH.Debug = true
 KOTH.XPTimer = 20 -- Time in seconds it takes to gain XP while in the zone
 KOTH.PointTimer = 5 -- Time in seconds it takes for the winning team to gain a point
 KOTH.PrioZoneTimer = 60 -- Time in seconds it takes for the Priority Circle to move
-KOTH.WinThreshold = 5 -- Amount of points required to win
+KOTH.WinThreshold = 100 -- Amount of points required to win
 KOTH.Spawn = {x = 0.0, y = 0.0, z = 0.0} -- Set spawn for players who have not selected a team.
 
 --DO NOT TOUCH
