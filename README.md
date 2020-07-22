@@ -57,7 +57,7 @@ To add another level you need to add another value to the table `KOTH.Levels` a 
 Roadmap
 =
 
-- [ ] Add a "resource needs updating" warning to the console if the server owners version is out of date.
+- [x] Add a "resource needs updating" warning to the console if the server owners version is out of date.
 - [ ] Add vehicles to the gamemode
 - [ ] Add a use for money to the gamemode
 - [ ] Allow the player to see thier rank, XP and money
