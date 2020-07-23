@@ -35,6 +35,9 @@ AddEventHandler("KOTH:SetUniform", function(tab, team)
     SetPedComponentVariation(PlayerPedId(), 4, 121, tab.Legs, 2)
     SetPedComponentVariation(PlayerPedId(), 6, 93, 0, 2)
   end
+  SetPedArmour(PlayerPedId(), 100.0)
+  GiveWeaponToPed(PlayerPedId(), `weapon_carbinerifle`, 100, false, true)
+  GiveWeaponToPed(PlayerPedId(), `weapon_knife`, 1, false, false)
   SetEntityCoords(PlayerPedId(), KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.x, KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.y, KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.z)
 end)
 
