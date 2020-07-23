@@ -4,7 +4,7 @@ Citizen.CreateThread(function()
   end
   KOTH.DebugPrint = function(text)
     if KOTH.Debug then
-      print("[^5KOTH^7] ^1DEBUG^7: ^3" .. text)
+      print("[^5KOTH^7] ^1DEBUG^7: ^3" .. text .. "^7")
     end
   end
 end)
