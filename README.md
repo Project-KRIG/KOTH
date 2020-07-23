@@ -22,7 +22,7 @@ Server Configuration
 
 In `shared/init.lua` there are a few lines that allow for configuration of the gamemode.
 
-`KOTH.Debug` This turns on verbose logging for the gamemode, only use this if you are experiencing issues with the gamemode.</br>
+`KOTH.Debug` This turns on more logging for the gamemode, only use this if you are experiencing issues with the gamemode.</br>
 `KOTH.XPTimer` This is the time in sconds that it takes for the player to gain XP inside the zone.</br>
 `KOTH.PointTimer` This is the time in seconds that it takes for teams to gain a point.</br>
 `KOTH.PrioZoneTimer` This is the time in seconds that it takes for the priority circle to move.</br>
@@ -59,11 +59,11 @@ Roadmap
 
 - [x] Add a "resource needs updating" warning to the console if the server owners version is out of date.
 - [ ] Add vehicles to the gamemode
-- [ ] Add a use for money to the gamemode
+- [ ] Add weapon shops where players are able to use thier money to buy different guns for this life.
 - [ ] Allow the player to see thier rank, XP and money
 - [x] Add exports to allow for external resources to interact with KOTH
 
-If you have any sugestions to add to the resource please add them to the forum post on the fivem forums or submit a feature request using the [issues](https://github.com/The-Neco/KOTH/issues) section of github.
+If you find any bugs or have any sugestions to add to the resource please add them to the forum post on the fivem forums or submit a feature request using the [issues](https://github.com/The-Neco/KOTH/issues) section of github.
 
 Want to contribute?
 
