@@ -20,6 +20,11 @@ server_scripts {
 	"server/*.lua",
 }
 
+server_export "SetConfValue"
+server_export "GetPlayerKills"
+server_export "GetPlayerDeaths"
+server_export "GetPlayerKD"
+
 files {
     'client/html/index.html',
     'client/html/style.css',
