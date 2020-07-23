@@ -18,7 +18,6 @@ Citizen.CreateThread(function()
     KOTH.Winning = KOTH.WinningTeam(InCircle)
     for _, player in ipairs(GetPlayers()) do
       KOTH.InCircle(tonumber(player))
-      --print(GetEntityCoords(GetPlayerPed(player)))
     end
     KOTH.PrioCircle.Count = KOTH.PrioCircle.Count + 1
     if KOTH.PrioCircle.Count == KOTH.PrioZoneTimer then
