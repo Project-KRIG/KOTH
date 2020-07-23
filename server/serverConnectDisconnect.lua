@@ -14,7 +14,9 @@ AddEventHandler("KOTH:ClientInitialized", function(PTab)
     Kills = PTab.Kills,
     Deaths = PTab.Deaths
   }
-  TriggerClientEvent("KOTH:SetMap", player, KOTH.CurrentMap)
+  if KOTH.CurrentMap ~= 0 then
+    TriggerClientEvent("KOTH:SetMap", player, KOTH.CurrentMap)
+  end
 end)
 
 AddEventHandler("playerDropped", function (reason)
