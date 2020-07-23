@@ -6,6 +6,7 @@ AddEventHandler("KOTH:OpenStartUi", function()
   })
   SetNuiFocus(true, true)
   TriggerServerEvent("KOTH:RequstPlayerCount")
+  KOTH.DebugPrint("Start UI Opened.")
 end)
 
 RegisterNUICallback('WelcomeClosed', function(data, cb)
@@ -15,12 +16,14 @@ RegisterNUICallback('WelcomeClosed', function(data, cb)
       KOTHUI = true,
       ChangeModel = true,
     })
+    KOTH.DebugPrint("Gender menu opened.")
   else
     SendNUIMessage({
       StartUI = false,
       KOTHUI = true,
       ChooseTeam = true,
     })
+    KOTH.DebugPrint("Team menu opened.")
   end
   cb('ok')
 end)
@@ -37,6 +40,8 @@ RegisterNUICallback("GenderSelect", function(data, cb)
     KOTHUI = true,
     ChooseTeam = true,
   })
+  KOTH.DebugPrint("Player chose " .. data.Gender .. " as thier model.")
+  KOTH.DebugPrint("Team menu opened.")
 end)
 
 RegisterNUICallback("TeamSelect", function(data, cb)
@@ -46,6 +51,7 @@ RegisterNUICallback("TeamSelect", function(data, cb)
     ChooseTeam = false,
   })
   SetNuiFocus(false, false)
+  KOTH.DebugPrint("Player joined team " .. data.Team .. ".")
 end)
 
 RegisterNetEvent("KOTH:UpdatePlayerCount")
@@ -89,6 +95,7 @@ AddEventHandler("KOTH:UpdatePlayerCount", function(tab)
       TeamToUnlock = "Green",
     })
   end
+  KOTH.DebugPrint("Current player counts Y:" .. tab.Yellow .. " G:" .. tab.Green .. " B:" .. tab.Blue .. ".")
 end)
 
 RegisterNetEvent("KOTH:ShowWin")
@@ -97,7 +104,9 @@ AddEventHandler("KOTH:ShowWin", function(team)
     Win = true,
     WinningTeam = team
   })
+  KOTH.DebugPrint("Win screen opened.")
   SetTimeout(5000, function() SendNUIMessage({Win = false}) end)
+  KOTH.DebugPrint("Win screen closed.")
 end)
 
 
@@ -109,4 +118,5 @@ AddEventHandler("KOTH:UpdatePoints", function(tab)
     Green = tab.Green,
     Blue = tab.Blue,
   })
+  KOTH.DebugPrint("Current points Y:" .. tab.Yellow .. " G:" .. tab.Green .. " B:" .. tab.Blue .. ".")
 end)

@@ -3,17 +3,20 @@ KOTH.GetKill = function()
   KOTH.SetPlayerKills(Kills)
   KOTH.AddXP(100)
   KOTH.SetMoney((KOTH.GetMoney() - 50))
+  KOTH.DebugPrint("Player got a kill and now has ".. Kills .." kills.")
 end
 
 KOTH.PlayerDied = function()
   local Deaths = KOTH.GetPlayerDeaths() + 1
   KOTH.SetPlayerDeaths(Deaths)
+  KOTH.DebugPrint("Player died and now has ".. Deaths .." deaths.")
 end
 
 KOTH.GetKD = function()
   local Kills = KOTH.GetPlayerKills()
   local Deaths = KOTH.GetPlayerDeaths()
   local KD = Kills / Deaths
+  KOTH.DebugPrint("Player's KD is " .. KD .. ".")
   return KD
 end
 

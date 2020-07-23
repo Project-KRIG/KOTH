@@ -60,6 +60,7 @@ KOTH.ResetGame = function()
     TriggerServerEvent('KOTH:ClientInitialized', KOTH.GetPlayerLevel(), KOTH.GetPlayerXP())
     TriggerEvent("KOTH:OpenStartUi")
   end
+  KOTH.DebugPrint("Game reset.")
 end
 
 if not IsDuplicityVersion() then

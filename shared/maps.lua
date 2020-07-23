@@ -29,6 +29,7 @@ Citizen.CreateThread(function()
     KOTH.Teams["Blue"].Spawns = KOTH.Maps[id].Spawns["Blue"]
     KOTH.PrioCircle.Coords = KOTH.Maps[id].Circle.Coords
     KOTH.PrioCircle.Size = KOTH.Maps[id].Circle.Size/6
+    KOTH.DebugPrint("Map set to " .. id)
     if IsDuplicityVersion() then
       TriggerClientEvent("KOTH:SetMap", -1, id)
     end

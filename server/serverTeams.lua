@@ -44,6 +44,7 @@ KOTH.GetPlayerCounts = function()
       BlueCount = BlueCount + 1
     end
   end
+  KOTH.DebugPrint("Current player counts Y:" .. YellowCount .. " G:" .. GreenCount .. " B:" .. BlueCount .. ".")
   TriggerClientEvent("KOTH:UpdatePlayerCount", -1, {Yellow = YellowCount, Green = GreenCount, Blue = BlueCount})
 end
 

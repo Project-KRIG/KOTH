@@ -35,10 +35,15 @@ AddEventHandler("KOTH:SetUniform", function(tab, team)
     SetPedComponentVariation(PlayerPedId(), 4, 121, tab.Legs, 2)
     SetPedComponentVariation(PlayerPedId(), 6, 93, 0, 2)
   end
+  KOTH.DebugPrint("Player model set.")
   SetPedArmour(PlayerPedId(), 100.0)
+  KOTH.DebugPrint("Player given armour.")
   GiveWeaponToPed(PlayerPedId(), `weapon_carbinerifle`, 100, false, true)
+  KOTH.DebugPrint("Player given Carbine Rifle.")
   GiveWeaponToPed(PlayerPedId(), `weapon_knife`, 1, false, false)
+  KOTH.DebugPrint("Player given knife.")
   SetEntityCoords(PlayerPedId(), KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.x, KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.y, KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.z)
+  KOTH.DebugPrint("Player teleported to spawn location.")
 end)
 
 KOTH.SetNutral = function()
@@ -71,4 +76,5 @@ KOTH.SetNutral = function()
     SetPedComponentVariation(PlayerPedId(), 4, 121, 0, 2)
     SetPedComponentVariation(PlayerPedId(), 6, 93, 0, 2)
   end
+  KOTH.DebugPrint("Player model set to nutral model.")
 end

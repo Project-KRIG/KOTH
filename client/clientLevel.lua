@@ -28,4 +28,5 @@ end
 KOTH.LevelUp = function()
   local Level = KOTH.GetPlayerLevel() + 1
   KOTH.SetPlayerLevel(Level)
+  KOTH.DebugPrint("Player leveled up.")
 end
