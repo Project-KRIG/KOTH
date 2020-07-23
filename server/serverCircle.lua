@@ -15,7 +15,6 @@ Citizen.CreateThread(function()
       KOTH.PointTicker = 0
     end
     local InCircle = KOTH.CountPlayersInCircle()
-    TriggerClientEvent("KOTH:InCircleCounts", -1, InCircle)
     KOTH.Winning = KOTH.WinningTeam(InCircle)
     for _, player in ipairs(GetPlayers()) do
       KOTH.InCircle(tonumber(player))
