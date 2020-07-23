@@ -32,6 +32,10 @@ KOTH.SpawnPoint = function()
   TriggerEvent("KOTH:SetUniform", KOTH.Teams[KOTH.CurrentTeam].Colors, KOTH.CurrentTeam)
 end
 
+KOTH.DefaultSpawn = function()
+  SetEntityCoords(PlayerPedId(), KOTH.Spawn.x, KOTH.Spawn.y, KOTH.Spawn.z)
+end
+
 RegisterNetEvent("playerSpawned")
 AddEventHandler("playerSpawned", function()
   if KOTH.CurrentTeam ~= "None" then
