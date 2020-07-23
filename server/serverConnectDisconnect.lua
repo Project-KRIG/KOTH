@@ -14,6 +14,7 @@ AddEventHandler("KOTH:ClientInitialized", function(PTab)
     Kills = PTab.Kills,
     Deaths = PTab.Deaths
   }
+  TriggerClientEvent("KOTH:SetMap", player, KOTH.CurrentMap)
 end)
 
 AddEventHandler("playerDropped", function (reason)

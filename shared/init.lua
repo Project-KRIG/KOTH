@@ -67,6 +67,7 @@ if not IsDuplicityVersion() then
   AddEventHandler("KOTH:ResetGame", KOTH.ResetGame)
 end
 
+KOTH.CurrentMap = 0
 KOTH.CurrentTeam = "None"
 KOTH.PointTicker = 0
 KOTH.Winning = "None"

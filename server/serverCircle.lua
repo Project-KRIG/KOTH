@@ -3,7 +3,8 @@ Citizen.CreateThread(function()
     Citizen.Wait(500)
   end
   Citizen.Wait(1000)
-  KOTH.SetMap(math.random(#KOTH.Maps))
+  KOTH.CurrentMap = math.random(#KOTH.Maps)
+  KOTH.SetMap(KOTH.CurrentMap)
   while true do
     Citizen.Wait(1000)
     KOTH.PointTicker = KOTH.PointTicker + 1
