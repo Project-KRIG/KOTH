@@ -1,23 +1,25 @@
 AddEventHandler("playerConnecting", function(name, callback, deferrals)
-  print("[KOTH] " .. name .. " has joined the game.")
+  print("[^5KOTH^7] " .. name .. " has joined the game.")
 end)
 
 RegisterNetEvent("KOTH:ClientInitialized")
-AddEventHandler("KOTH:ClientInitialized", function(CLevel, CXP)
+AddEventHandler("KOTH:ClientInitialized", function(PTab)
   local player = source
   local name = GetPlayerName(player)
-  print("[KOTH] " .. name .. " has been initialized, they are level " .. CLevel .. " and have " .. CXP .. " XP.")
+  print("[^5KOTH^7] " .. name .. " has been initialized, they are level " .. PTab.Level .. " and have " .. PTab.XP .. " XP.")
   KOTH.Players[player] = {
     Team = "No Team",
-    Level = CLevel,
-    XP = CXP
+    Level = PTab.Level,
+    XP = PTab.XP,
+    Kills = PTab.Kills,
+    Deaths = PTab.Deaths
   }
 end)
 
 AddEventHandler("playerDropped", function (reason)
 	local player = source
 	local name = GetPlayerName(player)
-	print("[KOTH] " .. name .. " left the game.")
+	print("[^5KOTH^7] " .. name .. " left the game.")
   if KOTH.Players[player].Team ~= "No Team" then
 	  KOTH.Teams[KOTH.Players[player].Team].Players[player] = false
   end
