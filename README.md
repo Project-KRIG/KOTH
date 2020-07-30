@@ -6,6 +6,10 @@ What is KOTH?
 
 King of the Hill is a "hold the area" game mode where three teams compete against each other. The team with the most players in the designated area will gain points. If there are equal amounts of allied and enemy team members in the area, then no points are awarded until someone takes the lead. Once a team has 100 points it is game over.
 
+Requirements
+=
+
+The most up to date version of `baseevents` from [cfx-server-data](https://github.com/citizenfx/cfx-server-data) is required to register player kills.
 
 How Do I install KOTH on my server?
 =
