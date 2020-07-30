@@ -23,9 +23,11 @@ AddEventHandler("playerDropped", function (reason)
 	local player = source
 	local name = GetPlayerName(player)
 	print("[^5KOTH^7] " .. name .. " left the game.")
-  if KOTH.Players[player].Team ~= "No Team" then
-	  KOTH.Teams[KOTH.Players[player].Team].Players[player] = false
+  if Koth.Players[player] ~= nil then
+    if KOTH.Players[player].Team ~= "No Team" then
+	     KOTH.Teams[KOTH.Players[player].Team].Players[player] = false
+     end
+     KOTH.Players[player] = nil
   end
-  KOTH.Players[player] = nil
   KOTH.GetPlayerCounts()
 end)
