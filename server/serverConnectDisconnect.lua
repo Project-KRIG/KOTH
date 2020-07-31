@@ -16,6 +16,7 @@ AddEventHandler("KOTH:ClientInitialized", function(PTab)
   }
   if KOTH.CurrentMap ~= 0 then
     TriggerClientEvent("KOTH:SetMap", player, KOTH.CurrentMap)
+    TriggerClientEvent("KOTH:MovePriorityCircle", player, KOTH.PrioCircle.Coords)
   end
 end)
 

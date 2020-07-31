@@ -32,6 +32,8 @@ Citizen.CreateThread(function()
     KOTH.DebugPrint("Map set to " .. id)
     if IsDuplicityVersion() then
       TriggerClientEvent("KOTH:SetMap", -1, id)
+    else
+      KOTH.CreateBlips()
     end
   end
 end)

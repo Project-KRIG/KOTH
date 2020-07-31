@@ -31,13 +31,15 @@ KOTH.Teams["Blue"] = {
 KOTH.Circle = {
   Coords = {x = 0.0, y = 0.0, z = 0.0},
   Size = 300.0,
-  PlayersInside = {}
+  PlayersInside = {},
+  Blip = nil
 }
 KOTH.PrioCircle = {
   Count = 0,
   Coords = {x = 0.0, y = 0.0, z = 0.0},
   Size = 50.0,
-  PlayersInside = {}
+  PlayersInside = {},
+  Blip = nil
 }
 
 KOTH.ResetGame = function()
