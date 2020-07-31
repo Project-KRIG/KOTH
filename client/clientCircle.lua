@@ -82,8 +82,10 @@ KOTH.CreateBlips = function()
     BeginTextCommandSetBlipName("STRING")
     AddTextComponentString("Objective")
     EndTextCommandSetBlipName(KOTH.Circle.Blip)
+    KOTH.DebugPrint("Priority Circle Blip Created.")
   else
     SetBlipCoords(KOTH.Circle.Blip, KOTH.Circle.Coords.x, KOTH.Circle.Coords.y, KOTH.Circle.Coords.z)
+    KOTH.DebugPrint("Circle blip moved.")
   end
   if KOTH.PrioCircle.Blip == nil then
     KOTH.PrioCircle.Blip = AddBlipForCoord(KOTH.PrioCircle.Coords.x, KOTH.PrioCircle.Coords.y, KOTH.PrioCircle.Coords.z)
@@ -94,7 +96,9 @@ KOTH.CreateBlips = function()
     BeginTextCommandSetBlipName("STRING")
     AddTextComponentString("Priority Objective")
     EndTextCommandSetBlipName(KOTH.PrioCircle.Blip)
+    KOTH.DebugPrint("Priority Circle Blip Created.")
   else
     SetBlipCoords(KOTH.PrioCircle.Blip, KOTH.PrioCircle.Coords.x, KOTH.PrioCircle.Coords.y, KOTH.PrioCircle.Coords.z)
+    KOTH.DebugPrint("Priority Circle Blip Moved.")
   end
 end
