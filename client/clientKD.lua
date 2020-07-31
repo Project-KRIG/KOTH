@@ -2,7 +2,7 @@ KOTH.GetKill = function()
   local Kills = KOTH.GetPlayerKills() + 1
   KOTH.SetPlayerKills(Kills)
   KOTH.AddXP(100)
-  KOTH.SetMoney((KOTH.GetMoney() - 50))
+  KOTH.SetMoney((KOTH.GetMoney() + 50))
   KOTH.DebugPrint("Player got a kill and now has ".. Kills .." kills.")
 end
 
