@@ -41,6 +41,7 @@ KOTH.PrioCircle = {
   PlayersInside = {},
   Blip = nil
 }
+KOTH.Vehicle = nil
 
 KOTH.ResetGame = function()
   KOTH.PrioCircle.Count = 0
@@ -59,6 +60,7 @@ KOTH.ResetGame = function()
   else
     SetEntityCoords(PlayerPedId(), KOTH.Spawn.x, KOTH.Spawn.y, KOTH.Spawn.z)
     KOTH.SetNutral()
+    KOTH.DeleteVehicle()
     TriggerServerEvent('KOTH:ClientInitialized', KOTH.GetPlayerLevel(), KOTH.GetPlayerXP())
     TriggerEvent("KOTH:OpenStartUi")
   end
