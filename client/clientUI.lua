@@ -62,38 +62,40 @@ AddEventHandler("KOTH:UpdatePlayerCount", function(tab)
     Green = tab.Green,
     Blue = tab.Blue,
   })
-  if tab.Yellow > tab.Blue or tab.Yellow > tab.Green then
-    SendNUIMessage({
-      LockTeam = true,
-      TeamToLock = "Yellow",
-    })
-  else
-    SendNUIMessage({
-      UnlockTeam = true,
-      TeamToUnlock = "Yellow",
-    })
-  end
-  if tab.Blue > tab.Yellow or tab.Blue > tab.Green then
-    SendNUIMessage({
-      LockTeam = true,
-      TeamToLock = "Blue",
-    })
-  else
-    SendNUIMessage({
-      UnlockTeam = true,
-      TeamToUnlock = "Blue",
-    })
-  end
-  if tab.Green > tab.Blue or tab.Green > tab.Yellow then
-    SendNUIMessage({
-      LockTeam = true,
-      TeamToLock = "Green",
-    })
-  else
-    SendNUIMessage({
-      UnlockTeam = true,
-      TeamToUnlock = "Green",
-    })
+  if KOTH.LockTeamsIfUneaven then
+    if tab.Yellow > tab.Blue or tab.Yellow > tab.Green then
+      SendNUIMessage({
+        LockTeam = true,
+        TeamToLock = "Yellow",
+      })
+    else
+      SendNUIMessage({
+        UnlockTeam = true,
+        TeamToUnlock = "Yellow",
+      })
+    end
+    if tab.Blue > tab.Yellow or tab.Blue > tab.Green then
+      SendNUIMessage({
+        LockTeam = true,
+        TeamToLock = "Blue",
+      })
+    else
+      SendNUIMessage({
+        UnlockTeam = true,
+        TeamToUnlock = "Blue",
+      })
+    end
+    if tab.Green > tab.Blue or tab.Green > tab.Yellow then
+      SendNUIMessage({
+        LockTeam = true,
+        TeamToLock = "Green",
+      })
+    else
+      SendNUIMessage({
+        UnlockTeam = true,
+        TeamToUnlock = "Green",
+      })
+    end
   end
   KOTH.DebugPrint("Current player counts Y:" .. tab.Yellow .. " G:" .. tab.Green .. " B:" .. tab.Blue .. ".")
 end)

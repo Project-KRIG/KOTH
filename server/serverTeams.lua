@@ -44,6 +44,9 @@ KOTH.GetPlayerCounts = function()
       BlueCount = BlueCount + 1
     end
   end
+  KOTH.Teams["Yellow"].Count = YellowCount
+  KOTH.Teams["Blue"].Count = BlueCount
+  KOTH.Teams["Green"].Count = GreenCount
   KOTH.DebugPrint("Current player counts Y:" .. YellowCount .. " G:" .. GreenCount .. " B:" .. BlueCount .. ".")
   TriggerClientEvent("KOTH:UpdatePlayerCount", -1, {Yellow = YellowCount, Green = GreenCount, Blue = BlueCount})
 end
@@ -57,5 +60,40 @@ KOTH.AddTeamPoints = function(team, amount)
     TriggerClientEvent("KOTH:ShowWin", -1, team)
     Citizen.Wait(5000)
     KOTH.ResetGame()
+  end
+end
+
+
+KOTH.Autobalance = function()
+  local difference = 0
+  difference = KOTH.Teams["Yellow"].Count - KOTH.Teams["Blue"].Count
+  if difference > 2 then
+    -- Yellow to Blue
+
+  end
+  difference = KOTH.Teams["Yellow"].Count - KOTH.Teams["Green"].Count
+  if difference > 2 then
+    -- Yellow to Green
+
+  end
+  difference = KOTH.Teams["Blue"].Count - KOTH.Teams["Yellow"].Count
+  if difference > 2 then
+    -- Blue to Yellow
+
+  end
+  difference = KOTH.Teams["Blue"].Count - KOTH.Teams["Green"].Count
+  if difference > 2 then
+    -- Blue to Green
+
+  end
+  difference = KOTH.Teams["Green"].Count - KOTH.Teams["Blue"].Count
+  if difference > 2 then
+    -- Green to Blue
+
+  end
+  difference = KOTH.Teams["Green"].Count - KOTH.Teams["Yellow"].Count
+  if difference > 2 then
+    -- Green to Yellow
+
   end
 end

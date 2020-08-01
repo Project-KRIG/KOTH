@@ -6,6 +6,7 @@ KOTH.PointTimer = 5 -- Time in seconds it takes for the winning team to gain a p
 KOTH.PrioZoneTimer = 60 -- Time in seconds it takes for the Priority Circle to move
 KOTH.WinThreshold = 100 -- Amount of points required to win
 KOTH.Spawn = {x = -75.5505, y = -819.929, z = 326.175} -- Set spawn for players who have not selected a team.
+KOTH.LockTeamsIfUneaven = false -- Lock the teams if they are uneven.
 
 --DO NOT TOUCH
 KOTH.Teams = {}
@@ -15,18 +16,21 @@ KOTH.Teams["Yellow"] = {
   Players = {},
   Points = 0,
   Colors = {Shirt = 5, Hat = 6, Legs = 3},
+  Count = 0
 }
 KOTH.Teams["Green"] = {
   Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
   Players = {},
   Points = 0,
   Colors = {Shirt = 0, Hat = 9, Legs = 5},
+  Count = 0
 }
 KOTH.Teams["Blue"] = {
   Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
   Players = {},
   Points = 0,
   Colors = {Shirt = 3, Hat = 7, Legs = 4},
+  Count = 0
 }
 KOTH.Circle = {
   Coords = {x = 0.0, y = 0.0, z = 0.0},
