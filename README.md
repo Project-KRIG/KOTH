@@ -67,6 +67,7 @@ Roadmap
 - [ ] Add weapon shops where players are able to use thier money to buy different guns for this life.
 - [ ] Allow the player to see thier rank, XP and money
 - [x] Add exports to allow for external resources to interact with KOTH
+- [ ] Add a friendly fire config option.
 
 If you find any bugs or have any sugestions to add to the resource please add them to the forum post on the fivem forums or submit a feature request using the [issues](https://github.com/The-Neco/KOTH/issues) section of github.
 
