@@ -59,15 +59,21 @@ To add another level you need to add another value to the table `KOTH.Levels` a 
 },
 ```
 
-Roadmap
+Roadmap/TODO List
 =
 
 - [x] Add a "resource needs updating" warning to the console if the server owners version is out of date.
-- [ ] Add vehicles to the gamemode
+- [ ] Add vehicles shop to the gamemode where players can purchase vehicles depending on thier level.
 - [ ] Add weapon shops where players are able to use thier money to buy different guns for this life.
-- [ ] Allow the player to see thier rank, XP and money
-- [x] Add exports to allow for external resources to interact with KOTH
+- [ ] Allow the player to see thier rank, XP and money.
+- [x] Add exports to allow for external resources to interact with KOTH.
 - [ ] Add a friendly fire config option.
+- [ ] Add spawn immunity to prevent spawn camping.
+- [ ] Add a spawn guard to maybe restrict players from entering enemy team spawns.
+- [ ] Update UI's to look better (react).
+- [ ] Add chat commands (bug report, help, etc.).
+- [ ] Don't give zone XP if teams are drawing (stops grinding).
+
 
 If you find any bugs or have any sugestions to add to the resource please add them to the forum post on the fivem forums or submit a feature request using the [issues](https://github.com/The-Neco/KOTH/issues) section of github.
 
