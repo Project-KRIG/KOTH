@@ -39,6 +39,21 @@ KOTH.DefaultSpawn = function()
   SetEntityCoords(PlayerPedId(), KOTH.Spawn.x, KOTH.Spawn.y, KOTH.Spawn.z)
 end
 
+Citizen.CreateThread(function()
+  AddRelationshipGroup('Yellow')
+  AddRelationshipGroup('Green')
+  AddRelationshipGroup('Blue')
+
+  SetRelationshipBetweenGroups(5, 'Yellow', 'Green')
+  SetRelationshipBetweenGroups(5, 'Yellow', 'Blue')
+
+  SetRelationshipBetweenGroups(5, 'Green', 'Yellow')
+  SetRelationshipBetweenGroups(5, 'Green', 'Blue')
+
+  SetRelationshipBetweenGroups(5, 'Blue', 'Green')
+  SetRelationshipBetweenGroups(5, 'Blue', 'Yellow')
+end)
+
 RegisterNetEvent("playerSpawned")
 AddEventHandler("playerSpawned", function()
   if KOTH.CurrentTeam ~= "None" then

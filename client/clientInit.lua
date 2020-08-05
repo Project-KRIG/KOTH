@@ -6,7 +6,7 @@ Citizen.CreateThread(function()
 			Citizen.Wait(1000)
 			KOTH.SetNutral()
 			TriggerEvent("KOTH:OpenStartUi")
-			NetworkSetFriendlyFireOption(true)
+			NetworkSetFriendlyFireOption(KOTH.FriendlyFire)
     	SetCanAttackFriendly(PlayerPedId(), true, true)
 			return
 		end

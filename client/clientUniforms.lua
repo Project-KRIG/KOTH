@@ -45,6 +45,7 @@ AddEventHandler("KOTH:SetUniform", function(tab, team)
   KOTH.DebugPrint("Player given knife.")
   SetEntityCoords(PlayerPedId(), KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.x, KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.y, KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.z)
   KOTH.DebugPrint("Player teleported to spawn location.")
+  SetPedRelationshipGroupHash(PlayerPedId(), KOTH.CurrentTeam)
 end)
 
 KOTH.SetNutral = function()

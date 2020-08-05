@@ -7,6 +7,7 @@ KOTH.PrioZoneTimer = 60 -- Time in seconds it takes for the Priority Circle to m
 KOTH.WinThreshold = 100 -- Amount of points required to win
 KOTH.Spawn = {x = -75.5505, y = -819.929, z = 326.175} -- Set spawn for players who have not selected a team.
 KOTH.LockTeamsIfUneaven = false -- Lock the teams if they are uneven.
+KOTH.FriendlyFire = true -- Toggle friendly fire.
 
 --DO NOT TOUCH
 KOTH.Teams = {}
