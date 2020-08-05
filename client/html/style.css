@@ -1,6 +1,11 @@
+* {
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+  box-sizing: border-box;
+}
+
 body {
   position: absolute;
-  font-family: "Arial", Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   height: 100vh;
   width: 100vw;
   padding: 0px;
@@ -21,41 +26,111 @@ body {
 #Welcome {
   display: none;
   position: absolute;
-  width: 25%;
+  width: 30%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(135, 135, 135, 0.5);
+  background-color: #1e272e;
   color: white;
   border-style: solid;
   border-width: 0.2vh;
-  border-color: black;
-  border-radius: 3vh;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
   padding: 0px;
   margin: 1vh;
   font-size: 6vh;
+  font-family: 'Montserrat', sans-serif;
   color: black;
+  color: #d4eaff;
+  text-shadow: 0 0 0 transparent, 0 0 10px #2695ff, 0 0 10px rgba(38, 149, 255, 0.5), 0 0 20px #2695ff, 0 0 100px #2695ff, 0 0 600px #2695ff, 0 0 900px #2695ff, 0 0000px #2695ff;
+  -webkit-animation: buzz 0.09s infinite alternate;
+  animation: buzz 0.09s infinite alternate;
 }
 
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+
+
+
+@-webkit-keyframes buzz {
+  70% {
+    opacity: 0.80;
+  }
+}
+ 
+@keyframes buzz {
+  70% {
+    opacity: 0.80;
+  }
+}
+@-webkit-keyframes blink {
+  40% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0.8;
+  }
+  43% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.2;
+  }
+  46% {
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  40% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0.8;
+  }
+  43% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.2;
+  }
+  46% {
+    opacity: 1;
+  }
+}
+
+
 #Welcome p {
-  padding: 0px;
-  padding-left: 1vh;
+  padding: 5px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
   padding-right: 1vh;
   margin: 1vh;
   font-size: 2.5vh;
 }
 
+
 #Welcome Button {
-  background-color: #4CAF50;
+  background-color: #485460;
   border: none;
   width: 40%;
+  color: #fff;
   height: 10%;
+  font-family: 'Montserrat', sans-serif;
   font-size: 3vh;
+  font-weight: 500;
   padding: 2vh;
   margin: 3vh;
+  transition: .2s;
+}
+
+#Welcome Button:hover {
+  background-color: rgba(38, 149, 255, 0.5);
 }
 
 #ModelSelect {
@@ -74,12 +149,14 @@ h1 {
 }
 
 #ModelSelect h1 {
+  font-family: 'Montserrat', sans-serif;
   font-size: 3vh;
 }
 
 #ModelSelect Button {
   background-color: #03A9F4;
   border: none;
+  font-family: 'Montserrat', sans-serif;
   width: 40%;
   height: 10%;
   font-size: 3vh;
@@ -91,25 +168,42 @@ h1 {
   display: none;
   position: absolute;
   width: 50%;
+  height: 50%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(135, 135, 135, 0.5);
+  background-color: #1e272e;
   color: white;
   border-style: solid;
   border-width: 0.2vh;
-  border-color: black;
-  border-radius: 3vh;
+  border: none;
+  transition: .2s;
+}
+
+#ChooseTeam h1 {
+  color: #fff;
+  text-transform: uppercase;
 }
 
 #ChooseTeam Button {
-  background-color: #03A9F4;
+  background-color: #485460;
   border: none;
-  width: 40%;
-  height: 10%;
+  display: block;
+  width: 40%; 
+  color: #fff;
+  height: 15%;
+  font-weight: 500;
   font-size: 3vh;
-  padding: 2vh;
-  margin: 1vh;
+  padding: 20px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  transition: .2s;
+  margin-top: 1.5em;
+}
+
+#ChooseTeam Button:hover {
+  background-color: rgba(38, 149, 255, 0.5);
 }
 
 #Points {
