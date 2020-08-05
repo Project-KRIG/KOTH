@@ -68,8 +68,8 @@ Roadmap/TODO List
 - [ ] Allow the player to see thier rank, XP and money.
 - [x] Add exports to allow for external resources to interact with KOTH.
 - [x] Add a friendly fire config option.
-- [ ] Add spawn immunity to prevent spawn camping.
-- [ ] Add a spawn guard to maybe restrict players from entering enemy team spawns.
+- [x] Add spawn immunity to prevent spawn camping.
+- [x] Add a spawn guard to maybe restrict players from entering enemy team spawns.
 - [ ] Update UI's to look better (react).
 - [ ] Add chat commands (bug report, help, etc.).
 - [ ] Add local voip system.
