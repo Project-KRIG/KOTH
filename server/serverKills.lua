@@ -25,11 +25,3 @@ AddEventHandler("baseevents:onPlayerDied", function(killertype, killertab)
   KOTH.AddDeath(source)
   TriggerClientEvent("KOTH:Died", source)
 end)
-
-
-RegisterNetEvent("baseevents:onPlayerWasted")
-AddEventHandler("baseevents:onPlayerWasted", function(deathtab)
-  KOTH.DebugPrint(GetPlayerName(source) .. " died.")
-  KOTH.AddDeath(source)
-  TriggerClientEvent("KOTH:Died", source)
-end)
