@@ -31,7 +31,7 @@ $(function()
         document.getElementById(unlock).disabled = "";
       }
       if (event.data.PlayerCounts == true) {
-        $("#Yellow").html("Yellow: " + event.data.Green + " players").css("font-family", 'Montserrat');
+        $("#Yellow").html("Yellow: " + event.data.Yellow + " players").css("font-family", 'Montserrat');
         $("#Green").html("Green: " + event.data.Green + " players").css("font-family", 'Montserrat');
         $("#Blue").html("Blue: " + event.data.Blue + " players").css("font-family", 'Montserrat');
       }
