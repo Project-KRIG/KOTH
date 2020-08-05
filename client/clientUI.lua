@@ -10,7 +10,7 @@ AddEventHandler("KOTH:OpenStartUi", function()
 end)
 
 RegisterNUICallback('WelcomeClosed', function(data, cb)
-  if GetResourceKvpString("KOTH:Model") == nil then
+  if GetResourceKvpString("KOTH:Model") == "None" then
     SendNUIMessage({
       StartUI = false,
       KOTHUI = true,
