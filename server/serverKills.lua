@@ -3,8 +3,10 @@ AddEventHandler("baseevents:onPlayerKilled", function(killerid, killertab)
   KOTH.DebugPrint(GetPlayerName(source) .. " was killed by " .. GetPlayerName(tonumber(killerid)) .. ".")
   KOTH.AddKill(killerid)
   KOTH.AddDeath(source)
-  TriggerClientEvent("KOTH:GetKill", killerid)
-  TriggerClientEvent("KOTH:Died", source)
+  if KOTH.Players[source].Team ~= KOTH.Players[killerid].Team then
+    TriggerClientEvent("KOTH:GetKill", killerid)
+    TriggerClientEvent("KOTH:Died", source)
+  end
 end)
 
 KOTH.AddKill = function(player)
