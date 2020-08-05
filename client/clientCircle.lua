@@ -50,7 +50,9 @@ end)
 KOTH.InSpawn = function()
   local Spawn = (GetEntityCoords(PlayerPedId()) - vector3(KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.x, KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.y, KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.z))
   if (#Spawn <= (KOTH.PrioCircle.Size / 2)) then
-    SetPlayerInvincible(PlayerId(), true)
+    if not GetPlayerInvincible(PlayerId()) then
+      SetPlayerInvincible(PlayerId(), true)
+    end
     DisableControlAction(0, 142, true)
     DisableControlAction(0, 106, true)
     DisableControlAction(0, 24,  true)
@@ -64,7 +66,11 @@ KOTH.InSpawn = function()
 		DisableControlAction(0, 141, true)
 		DisableControlAction(0, 143, true)
     DrawMarker(1, KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.x, KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.y, KOTH.Teams[KOTH.CurrentTeam].Spawns.Player.z-20.0, 0, 0, 0, 0, 0, 0, KOTH.PrioCircle.Size, KOTH.PrioCircle.Size, 100.0, 244, 67, 54, 20, false, false, 0, false)
-	end
+  else
+    if GetPlayerInvincible(PlayerId()) then
+      SetPlayerInvincible(PlayerId(), false)
+    end
+  end
 end
 
 KOTH.OtherSpawns = function(team)
