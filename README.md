@@ -75,7 +75,7 @@ Roadmap/TODO List
 - [ ] Don't give zone XP if teams are drawing (stops grinding).
 - [ ] Add local voip system.
 - [ ] Add radio system for team radios.
-- [ ] TP/kill players if they go outside the AOP.
+- [x] TP/kill players if they go outside the AOP.
 
 
 If you find any bugs or have any sugestions to add to the resource please add them to the forum post on the fivem forums or submit a feature request using the [issues](https://github.com/The-Neco/KOTH/issues) section of github.

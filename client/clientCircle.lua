@@ -50,6 +50,11 @@ KOTH.InCircle = function()
 	if (#MainCircle <= (KOTH.Circle.Size / 2) + 2) then
     InCircle = true
 	end
+  if #MainCircle >= 600.0 and KOTH.CurrentTeam ~= "None" then
+    SetEntityHealth(PlayerPedId(), 0.0)
+    Citizen.Wait(3000)
+    -- SEND YOU WERE KILLED BECAUSE YOU ARE TOO FAR AWAY FROM AREA
+  end
   local PrioCircle = (GetEntityCoords(PlayerPedId()) - vector3(KOTH.PrioCircle.Coords.x, KOTH.PrioCircle.Coords.y, KOTH.PrioCircle.Coords.z))
 	if (#PrioCircle <= (KOTH.PrioCircle.Size / 2)) then
     InPrio = true
