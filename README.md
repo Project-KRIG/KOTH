@@ -72,7 +72,6 @@ Roadmap/TODO List
 - [ ] Add a spawn guard to maybe restrict players from entering enemy team spawns.
 - [ ] Update UI's to look better (react).
 - [ ] Add chat commands (bug report, help, etc.).
-- [ ] Don't give zone XP if teams are drawing (stops grinding).
 - [ ] Add local voip system.
 - [ ] Add radio system for team radios.
 - [x] TP/kill players if they go outside the AOP.

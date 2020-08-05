@@ -56,6 +56,7 @@ end)
 
 RegisterNetEvent("playerSpawned")
 AddEventHandler("playerSpawned", function()
+  NetworkSetLocalPlayerInvincibleTime(1000)
   if KOTH.CurrentTeam ~= "None" then
     KOTH.SpawnPoint()
   else
