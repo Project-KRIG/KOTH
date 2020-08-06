@@ -97,9 +97,9 @@ KOTH.OtherSpawns = function(team)
         SetEntityHealth(PlayerPedId(), 0.0)
       end
     end
-    Spawn = (GetEntityCoords(PlayerPedId()) - vector3(KOTH.Teams["Green"].Spawns.Player.x, KOTH.Teams["Green"].Spawns.Player.y, KOTH.Teams["Green"].Spawns.Player.z))
+    Spawn = (GetEntityCoords(PlayerPedId()) - vector3(KOTH.Teams["Blue"].Spawns.Player.x, KOTH.Teams["Blue"].Spawns.Player.y, KOTH.Teams["Blue"].Spawns.Player.z))
     if (#Spawn <= (KOTH.PrioCircle.Size / 2 + 20.0)) then
-      DrawMarker(1, KOTH.Teams["Green"].Spawns.Player.x, KOTH.Teams["Green"].Spawns.Player.y, KOTH.Teams["Green"].Spawns.Player.z-20.0, 0, 0, 0, 0, 0, 0, KOTH.PrioCircle.Size, KOTH.PrioCircle.Size, 100.0, 244, 67, 54, 20, false, false, 0, false)
+      DrawMarker(1, KOTH.Teams["Blue"].Spawns.Player.x, KOTH.Teams["Blue"].Spawns.Player.y, KOTH.Teams["Blue"].Spawns.Player.z-20.0, 0, 0, 0, 0, 0, 0, KOTH.PrioCircle.Size, KOTH.PrioCircle.Size, 100.0, 244, 67, 54, 20, false, false, 0, false)
       if (#Spawn <= (KOTH.PrioCircle.Size / 2)) then
         SetEntityHealth(PlayerPedId(), 0.0)
       end
