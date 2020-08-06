@@ -136,16 +136,14 @@ button {
 #ModelSelect {
   display: none;
   position: absolute;
-  width: 25%;
+  width: 40%;
+  height: 20%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(135, 135, 135, 0.5);
+  background-color: #1e272e;
   color: white;
-  border-style: solid;
-  border-width: 0.2vh;
-  border-color: black;
-  border-radius: 3vh;
+  border: none;
 }
 
 #ModelSelect h1 {
@@ -154,11 +152,12 @@ button {
 }
 
 #ModelSelect Button {
-  background-color: #03A9F4;
+  background-color: #485460;
   border: none;
   font-family: 'Montserrat', sans-serif;
   width: 40%;
-  height: 10%;
+  height: 40%;
+  color: #fff;
   font-size: 3vh;
   padding: 2vh;
   margin: 1vh;
@@ -174,8 +173,6 @@ button {
   transform: translate(-50%, -50%);
   background-color: #1e272e;
   color: white;
-  border-style: solid;
-  border-width: 0.2vh;
   border: none;
   transition: .2s;
 }
