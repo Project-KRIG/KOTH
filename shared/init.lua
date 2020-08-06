@@ -1,4 +1,5 @@
 KOTH = {}
+KOTH.Mumble = {}
 KOTH.Ready = false --DO NOT TOUCH
 KOTH.Debug = false
 KOTH.XPTimer = 20 -- Time in seconds it takes to gain XP while in the zone
@@ -9,29 +10,45 @@ KOTH.Spawn = {x = -75.5505, y = -819.929, z = 326.175} -- Set spawn for players 
 KOTH.LockTeamsIfUneaven = false -- Lock the teams if they are uneven.
 KOTH.FriendlyFire = true -- Toggle friendly fire.
 
+
+--[[ MUMBLE CONFIG ]]
+
+KOTH.Mumble.Config = {
+  Range = 20.0, -- Local chat range. Default: 20.0
+  RadioControl = 171, -- Push to talk key. Default: 171 CAPSLOCK
+}
+
+--[[ END OF MUMBLE CONFIG]]
+
+
 --DO NOT TOUCH
 KOTH.Teams = {}
 KOTH.Players = {}
+KOTH.Mumble.Channels = {}
+KOTH.Mumble.Players = {}
 KOTH.Teams["Yellow"] = {
   Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
   Players = {},
   Points = 0,
   Colors = {Shirt = 5, Hat = 6, Legs = 3},
-  Count = 0
+  Count = 0,
+  Channel = 1
 }
 KOTH.Teams["Green"] = {
   Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
   Players = {},
   Points = 0,
   Colors = {Shirt = 0, Hat = 9, Legs = 5},
-  Count = 0
+  Count = 0,
+  Channel = 2
 }
 KOTH.Teams["Blue"] = {
   Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
   Players = {},
   Points = 0,
   Colors = {Shirt = 3, Hat = 7, Legs = 4},
-  Count = 0
+  Count = 0,
+  Channel = 3
 }
 KOTH.Circle = {
   Coords = {x = 0.0, y = 0.0, z = 0.0},

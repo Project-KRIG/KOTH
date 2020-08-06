@@ -7,6 +7,7 @@ KOTH.JoinTeam = function(player, team)
     KOTH.Teams[team].Players[player] = true
     KOTH.Players[player].Team = team
   end
+  TriggerEvent("KOTH:SetMumbleChannel", KOTH.Teams[team].Channel, player)
   TriggerClientEvent("KOTH:SetUniform", player, KOTH.Teams[team].Colors, team)
   KOTH.GetPlayerCounts()
 end
