@@ -72,8 +72,9 @@ Roadmap/TODO List
 - [x] Add a spawn guard to maybe restrict players from entering enemy team spawns.
 - [ ] Update UI's to look better (react).
 - [ ] Add chat commands (bug report, help, etc.).
-- [ ] Add local voip system.
-- [ ] Add radio system for team radios.
+- [x] Add local voip system.
+- [x] Add radio system for team radios.
+- [ ] Add mumble filters for radio sounds.
 - [x] TP/kill players if they go outside the AOP.
 
 
