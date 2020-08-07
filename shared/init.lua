@@ -16,6 +16,9 @@ KOTH.FriendlyFire = true -- Toggle friendly fire.
 KOTH.Mumble.Config = {
   Range = 20.0, -- Local chat range. Default: 20.0
   RadioControl = 171, -- Push to talk key. Default: 171 CAPSLOCK
+  Effects = {
+    ["Radio"] = {WSNCurve = distortionCurve(1)}
+  },
 }
 
 --[[ END OF MUMBLE CONFIG]]
@@ -26,6 +29,7 @@ KOTH.Teams = {}
 KOTH.Players = {}
 KOTH.Mumble.Channels = {}
 KOTH.Mumble.Players = {}
+KOTH.Mumble.ClientData = {}
 KOTH.Teams["Yellow"] = {
   Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
   Players = {},
