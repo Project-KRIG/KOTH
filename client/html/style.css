@@ -63,7 +63,7 @@ button {
     opacity: 0.80;
   }
 }
- 
+
 @keyframes buzz {
   70% {
     opacity: 0.80;
@@ -186,7 +186,7 @@ button {
   background-color: #485460;
   border: none;
   display: block;
-  width: 40%; 
+  width: 40%;
   color: #fff;
   height: 15%;
   font-weight: 500;
@@ -210,12 +210,9 @@ button {
   left: 100%;
   top: 100%;
   transform: translate(-110%, -110%);
-  background-color: rgba(135, 135, 135, 0.5);
+  background-color: #1e272e;
   color: white;
-  border-style: solid;
-  border-width: 0.2vh;
-  border-color: black;
-  border-radius: 3vh;
+  border: none;
 }
 
 #Points h1 {
