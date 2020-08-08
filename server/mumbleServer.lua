@@ -24,6 +24,9 @@ AddEventHandler("KOTH:MumbleTalking", function(bool)
 end)
 
 Citizen.CreateThread(function()
+  while KOTH.Mumble.Players == nil do
+    Citizen.Wait(500)
+  end
   while true do
     Citizen.Wait(500)
     for PlayerID, VoiceData in pairs(KOTH.Mumble.Players) do
