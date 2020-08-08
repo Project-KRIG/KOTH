@@ -16,9 +16,6 @@ KOTH.FriendlyFire = true -- Toggle friendly fire.
 KOTH.Mumble.Config = {
   Range = 20.0, -- Local chat range. Default: 20.0
   RadioControl = 171, -- Push to talk key. Default: 171 CAPSLOCK
-  Effects = {
-    ["Radio"] = {WSNCurve = distortionCurve(1)}
-  },
 }
 
 --[[ END OF MUMBLE CONFIG]]
