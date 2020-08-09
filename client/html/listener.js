@@ -61,7 +61,7 @@ $(function()
         document.getElementById("Shop").style.display = "none";
       }
       if (event.data.PlayerCounts == true) {
-        $("#Yellow").html("Yellow: " + event.data.Yellow + " players").css("font-family", 'Montserrat');
+        $("#Yellow").html("Yellow: " + event.data.Yellow + " players").css("font-family", 'Montserrat');z
         $("#Green").html("Green: " + event.data.Green + " players").css("font-family", 'Montserrat');
         $("#Blue").html("Blue: " + event.data.Blue + " players").css("font-family", 'Montserrat');
       }
@@ -86,7 +86,9 @@ $(function()
 
       var weapons = event.data.weapons;
       for (let [key, value] of Object.entries(weapons)) {
-        $('#weapon-list').append('<li><button id="'+ key +'" onclick="buyWeapon(this)">' + key + " | " + formatter.format(value.price) +  '</button></li>')
+        $('#weapon-list').append(
+          '<div id="weapon-box"><img src="./assets/' + value.Model +'.png"><button id="'+ key +'" onclick="buyWeapon(this)">Buy</button><p> ' + formatter.format(value.price) + ' | Lvl: ' + value.levelReq +'</p></div>'
+          )
       }
 
       

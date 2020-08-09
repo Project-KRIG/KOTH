@@ -109,6 +109,14 @@ KOTH.ShowMap = true
 -- SHOP
 
 KOTH.Weapons = {
-  ["Pistol"] = {Model = `weapon_pistol`, levelReq = 5, price = 200},
-  ["SMG"] = {Model = `weapon_smg`, levelReq = 5, price = 200},
+  ["Pistol"] = {Model = 'weapon_pistol', levelReq = 5, price = 200},
+  ["SMG"] = {Model = 'weapon_smg', levelReq = 5, price = 200},
+  --["RPG"] = {Model = 'weapon_rpg', levelReq = 5, price = 200},
+  ["Carbine Rifle"] = {Model = 'weapon_carbinerifle', levelReq = 5, price = 200},
+  ["Assault Rifle"] = {Model = 'weapon_assaultrifle', levelReq = 5, price = 200},
+  ["Revolver"] = {Model = 'weapon_revolver', levelReq = 5, price = 200},
+  --["Marksman Rifle"] = {Model = 'weapon_marksmanrifle', levelReq = 5, price = 200},
+  --["Combat LMG"] = {Model = 'weapon_combatmg_mk2', levelReq = 5, price = 200},
+  --["Knife"] = {Model = 'weapon_knife', levelReq = 5, price = 200},
+  --["Special Carbine"] = {Model = 'weapon_specialcarbine', levelReq = 5, price = 200},
 }

@@ -45,7 +45,7 @@ end)
 
 RegisterNUICallback('koth:ui:buyWeapons', function(data)
   print("WEP: ", data.weapon)
-  GiveWeaponToPed(PlayerPedId(), KOTH.Weapons[data.weapon].Model, 300, true, true)
+  GiveWeaponToPed(PlayerPedId(), GetHashKey(KOTH.Weapons[data.weapon].Model), 300, true, true)
 end)
 
 -- SHOP START
