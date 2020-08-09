@@ -2,7 +2,7 @@ KOTH = {}
 KOTH.Mumble = {}
 KOTH.Ready = false --DO NOT TOUCH
 KOTH.Debug = false
-KOTH.XPTimer = 20 -- Time in seconds it takes to gain XP while in the zone
+KOTH.XPTimer = 1 -- Time in seconds it takes to gain XP while in the zone
 KOTH.PointTimer = 5 -- Time in seconds it takes for the winning team to gain a point
 KOTH.PrioZoneTimer = 60 -- Time in seconds it takes for the Priority Circle to move
 KOTH.WinThreshold = 100 -- Amount of points required to win
@@ -104,3 +104,11 @@ KOTH.Ready = true
 
 -- UI
 KOTH.ShowMap = true
+
+
+-- SHOP
+
+KOTH.Weapons = {
+  ["Pistol"] = {Model = `weapon_pistol`, levelReq = 5, price = 200},
+  ["SMG"] = {Model = `weapon_smg`, levelReq = 5, price = 200},
+}

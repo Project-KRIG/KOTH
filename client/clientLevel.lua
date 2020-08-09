@@ -8,9 +8,10 @@ KOTH.AddXP = function(amount)
   end
   KOTH.SetPlayerXP(XP)
   KOTH.DebugPrint(amount .. " XP added.")
+  TriggerEvent('koth:ui:level')
 end
 
-KOTH.GetLevelThreshold()
+KOTH.GetLevelThreshold = function()
   return KOTH.Levels[KOTH.GetPlayerLevel()].Threshold
 end
 
@@ -33,6 +34,7 @@ KOTH.LevelUp = function()
   local Level = KOTH.GetPlayerLevel() + 1
   KOTH.SetPlayerLevel(Level)
   KOTH.DebugPrint("Player leveled up.")
+  TriggerEvent('koth:ui:level')
 end
 
 KOTH.LevelPercentage = function()

@@ -6,6 +6,7 @@ AddEventHandler("KOTH:OpenStartUi", function()
   })
   SetNuiFocus(true, true)
   TriggerServerEvent("KOTH:RequstPlayerCount")
+  TriggerEvent('koth:ui:sendWeapons')
   KOTH.DebugPrint("Start UI Opened.")
 end)
 
@@ -18,23 +19,37 @@ AddEventHandler('koth:ui:money', function()
     })
 end)
 
+
 RegisterNetEvent('koth:ui:level')
 AddEventHandler('koth:ui:level', function()
-    local level = KOTH.LevelPercentage()
+    local level = KOTH.GetPlayerLevel()
+    local perc = KOTH.LevelPercentage()
     local curLvl = KOTH.GetPlayerXP()
     local MaxLvl = KOTH.GetLevelThreshold()
     print(level)
     SendNUIMessage({
       level = level,
+      perc = perc,
       curLvl = curLvl,
-      MaxLvl = MaxLvl
+      maxLvl = MaxLvl
     })
 end)
 
+RegisterNetEvent('koth:ui:sendWeapons')
+AddEventHandler('koth:ui:sendWeapons', function()
+  local weapons = KOTH.Weapons
+  SendNUIMessage({
+    weapons = weapons
+  })
+end)
+
+RegisterNUICallback('koth:ui:buyWeapons', function(data)
+  print("WEP: ", data.weapon)
+  GiveWeaponToPed(PlayerPedId(), KOTH.Weapons[data.weapon].Model, 300, true, true)
+end)
 
 -- SHOP START
 RegisterCommand('koth:shop:show', function(source, args, rawCommand)
-
   SendNUIMessage({
     ShopUI = true
   })

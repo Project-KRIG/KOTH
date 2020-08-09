@@ -41,6 +41,7 @@ end
 
 KOTH.SetMoney = function(money)
   SetResourceKvpInt("KOTH:Money", money)
+  TriggerEvent('koth:ui:money')
 end
 
 KOTH.SetPlayerModel = function(male)

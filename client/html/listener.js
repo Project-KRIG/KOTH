@@ -4,10 +4,12 @@ const formatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 0
 })
 
-function move(width, maxLvl, curLvl) {
+function move(perc, maxLvl, curLvl) {
     var elem = document.getElementById("myBar");
-    elem.style.width = width + "%";
-    elem.innerHTML = curLvl + "/" + maxLvl
+    var lvl = document.getElementById('lvl');
+    lvl.innerHTML = curLvl + "/" + maxLvl
+    elem.style.width = perc + "%";
+    //elem.innerHTML = curLvl + "/" + maxLvl
 }
 
 
@@ -19,6 +21,11 @@ $(function()
     var money = 0
     window.addEventListener('message', function(event)
     {
+
+      if (event.data.level) {
+        move(event.data.perc, event.data.maxLvl, event.data.curLvl)
+        $('#lvl-hud').html("Lvl: " + event.data.level)
+      }
 
       if (event.data.KOTHUI == true) {
         document.getElementById("KOTHUI").style.display = "block";
@@ -76,8 +83,17 @@ $(function()
         console.log(money)
         $('#money-hud').html(formatter.format(money))
       }
+
+      var weapons = event.data.weapons;
+      for (let [key, value] of Object.entries(weapons)) {
+        $('#weapon-list').append('<li><button id="'+ key +'" onclick="buyWeapon(this)">' + key + " | " + formatter.format(value.price) +  '</button></li>')
+      }
+
+      
     });
 
+    
+    
     // THE SHOP
   
     // Items
@@ -125,3 +141,10 @@ function Team(team){
 function closeShop() {
   $.post('http://koth/koth:shop:close', JSON.stringify({}));
 }
+
+function buyWeapon(elem) { 
+  console.log(elem.id)
+  $.post('http://koth/koth:ui:buyWeapons', JSON.stringify({
+    weapon: elem.id 
+  }))
+} 

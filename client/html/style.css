@@ -210,8 +210,14 @@ button {
 #player-stats {
   position: absolute;
   left: 90%;
-  top: 75%;
+  top: 73%;
   transform: translate(-5%, -10%);
+}
+
+#player-stats #lvl {
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
 }
 
 #myProgress {

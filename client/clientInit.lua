@@ -15,6 +15,7 @@ Citizen.CreateThread(function()
 			DisplayRadar(KOTH.ShowMap)
 			
 			TriggerEvent('koth:ui:money')
+			TriggerEvent('koth:ui:level')
 
 			return
 		end
