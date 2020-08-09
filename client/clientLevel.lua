@@ -1,7 +1,7 @@
 KOTH.AddXP = function(amount)
   local XPAfter = KOTH.GetPlayerXP() + amount
   local XP = XPAfter
-  local LevelThreshold = KOTH.Levels[KOTH.GetPlayerLevel()].Threshold
+  local LevelThreshold = KOTH.GetLevelThreshold()
   if XPAfter > LevelThreshold then
     XP = XPAfter - LevelThreshold
     KOTH.LevelUp()
