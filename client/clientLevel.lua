@@ -30,3 +30,11 @@ KOTH.LevelUp = function()
   KOTH.SetPlayerLevel(Level)
   KOTH.DebugPrint("Player leveled up.")
 end
+
+KOTH.LevelPercentage = function()
+  local max = KOTH.Levels[KOTH.GetPlayerLevel()].Threshold
+  local cur = KOTH.GetPlayerXP()
+
+  local perc = round(((cur/max)*100), 0)
+  return perc
+end
