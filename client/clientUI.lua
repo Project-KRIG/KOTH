@@ -18,6 +18,19 @@ AddEventHandler('koth:ui:money', function()
     })
 end)
 
+RegisterNetEvent('koth:ui:level')
+AddEventHandler('koth:ui:level', function()
+    local level = KOTH.LevelPercentage()
+    local curLvl = KOTH.GetPlayerXP()
+    local MaxLvl = KOTH.GetLevelThreshold()
+    print(level)
+    SendNUIMessage({
+      level = level,
+      curLvl = curLvl,
+      MaxLvl = MaxLvl
+    })
+end)
+
 
 -- SHOP START
 RegisterCommand('koth:shop:show', function(source, args, rawCommand)
@@ -158,5 +171,3 @@ AddEventHandler("KOTH:UpdatePoints", function(tab)
   })
   KOTH.DebugPrint("Current points Y:" .. tab.Yellow .. " G:" .. tab.Green .. " B:" .. tab.Blue .. ".")
 end)
-
-

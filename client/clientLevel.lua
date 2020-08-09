@@ -10,6 +10,10 @@ KOTH.AddXP = function(amount)
   KOTH.DebugPrint(amount .. " XP added.")
 end
 
+KOTH.GetLevelThreshold()
+  return KOTH.Levels[KOTH.GetPlayerLevel()].Threshold
+end
+
 KOTH.XPTicker = function()
   local InCircle = KOTH.InCircle()
   local XPToAdd = 0
@@ -32,7 +36,7 @@ KOTH.LevelUp = function()
 end
 
 KOTH.LevelPercentage = function()
-  local max = KOTH.Levels[KOTH.GetPlayerLevel()].Threshold
+  local max = KOTH.GetLevelThreshold()
   local cur = KOTH.GetPlayerXP()
 
   local perc = round(((cur/max)*100), 0)
