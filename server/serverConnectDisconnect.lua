@@ -14,6 +14,8 @@ AddEventHandler("KOTH:ClientInitialized", function(PTab)
     Kills = PTab.Kills,
     Deaths = PTab.Deaths
   }
+  TriggerClientEvent("KOTH:SyncTime", player, KOTH.Hour, KOTH.Minute)
+  TriggerClientEvent("KOTH:SyncWeather", player, KOTH.Weather)
   if KOTH.CurrentMap ~= 0 then
     TriggerClientEvent("KOTH:SetMap", player, KOTH.CurrentMap)
     TriggerClientEvent("KOTH:MovePriorityCircle", player, KOTH.PrioCircle.Coords)

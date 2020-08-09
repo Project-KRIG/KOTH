@@ -9,6 +9,19 @@ KOTH.WinThreshold = 100 -- Amount of points required to win
 KOTH.Spawn = {x = -75.5505, y = -819.929, z = 326.175} -- Set spawn for players who have not selected a team.
 KOTH.LockTeamsIfUneaven = false -- Lock the teams if they are uneven.
 KOTH.FriendlyFire = true -- Toggle friendly fire.
+KOTH.TimeEnabled = true -- Wheather time should be frozen.
+KOTH.WeatherEnabled = true -- Toggle weather enabled.
+KOTH.WeatherChance = 20 -- Percentage chance that the weather changes every 5 minutes.
+KOTH.WeatherTypes = {
+  "CLEAR",
+  "EXTRASUNNY",
+  "CLOUDS",
+  "OVERCAST",
+  "RAIN",
+  "THUNDER",
+  "SMOG",
+  "FOGGY",
+}
 
 
 --[[ MUMBLE CONFIG ]]
@@ -96,6 +109,10 @@ if not IsDuplicityVersion() then
 end
 
 KOTH.CurrentMap = 0
+KOTH.Minute = 0
+KOTH.Hour = 8
+KOTH.WeatherTimer = 0
+KOTH.Weather = "EXTRASUNNY"
 KOTH.CurrentTeam = "None"
 KOTH.PointTicker = 0
 KOTH.Winning = "None"
