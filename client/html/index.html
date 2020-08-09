@@ -1,7 +1,6 @@
 <html>
 	<head>
 		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
-		<script src="nui://koth/client/html/listener.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="nui://koth/client/html/style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 	</head>
@@ -41,6 +40,33 @@
 					<h1 id="WinText"></h1>
 				</center>
 			</div>
+			<div id="Shop">
+				<div class="shop-container">
+					<header>
+						<h3 class="shop-title">Shop</h3>
+							<nav>
+								<ul>
+									<li><button id="item-btn">Items</button></li>
+									<li><button id="wep-btn">Weapons</button></li>
+									<li><button id="veh-btn">Vehicles</button></li>
+									<li><button id="close-btn" onclick="closeShop()">Close</button></li>
+								</ul>
+							</nav>
+					</header>
+					<div id="items-container">
+						<h2>Items</h2>
+					</div>
+
+					<div id="wep-container">
+						<h2>Weapons</h2>
+					</div>
+
+					<div id="veh-container">
+						<h2>Vehicles</h2>
+					</div>
+				</div>
+			</div>
 		</div>
+		<script src="listener.js"></script>
 	</body>
 </html>

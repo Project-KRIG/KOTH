@@ -9,6 +9,33 @@ AddEventHandler("KOTH:OpenStartUi", function()
   KOTH.DebugPrint("Start UI Opened.")
 end)
 
+-- SHOP START
+RegisterCommand('koth:shop:show', function(source, args, rawCommand)
+
+  SendNUIMessage({
+    ShopUI = true
+  })
+  SetNuiFocus(true, true)
+
+end, false)
+
+
+RegisterCommand('koth:shop:hide', function(source, args, rawCommand)
+  SendNUIMessage({
+    ShopUI = false
+  })
+  SetNuiFocus(false, false)
+end, false)
+
+RegisterNUICallback('koth:shop:close', function()
+  SendNUIMessage({
+    ShopUI = false
+  })
+  SetNuiFocus(false, false)
+end)
+
+-- SHOP END
+
 RegisterNUICallback('WelcomeClosed', function(data, cb)
   if GetResourceKvpString("KOTH:Model") == "None" then
     SendNUIMessage({
