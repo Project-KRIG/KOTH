@@ -1,7 +1,12 @@
 $(function()
 {
+    $('#items-container').show();
+    $('#wep-container').hide();
+    $('#veh-container').hide();
     window.addEventListener('message', function(event)
     {
+
+
       if (event.data.KOTHUI == true) {
         document.getElementById("KOTHUI").style.display = "block";
       } else if (event.data.KOTHUI == false) {
@@ -30,6 +35,11 @@ $(function()
         var unlock = event.data.TeamToUnlock;
         document.getElementById(unlock).disabled = "";
       }
+      if (event.data.ShopUI == true) {
+        document.getElementById("Shop").style.display = "block";
+      } else if (event.data.ShopUI == false) {
+        document.getElementById("Shop").style.display = "none";
+      }
       if (event.data.PlayerCounts == true) {
         $("#Yellow").html("Yellow: " + event.data.Yellow + " players").css("font-family", 'Montserrat');
         $("#Green").html("Green: " + event.data.Green + " players").css("font-family", 'Montserrat');
@@ -48,6 +58,34 @@ $(function()
         document.getElementById("WinText").innerHTML = "";
       }
     });
+
+
+    // THE SHOP
+
+    // Items
+    $('#item-btn').click(function() {
+      $('#items-container').show();
+      $('#wep-container').hide();
+      $('#veh-container').hide();
+      console.log("FUCK")
+    })
+    
+    // WPep
+    $('#wep-btn').click(function() {
+      $('#wep-container').show();
+      $('#items-container').hide();
+      $('#veh-container').hide();
+      console.log("FUCK")
+    })
+    
+    // Veh
+    $('#veh-btn').click(function() {
+      $('#veh-container').show();
+      $('#items-container').hide();
+      $('#wep-container').hide();
+      console.log("FUCK")
+    })
+
 });
 
 function StartPressed() {
@@ -64,4 +102,9 @@ function Gender(Gender) {
 
 function Team(team){
   $.post('http://koth/TeamSelect', JSON.stringify({Team: team}));
+}
+
+// SHOP
+function closeShop() {
+  $.post('http://koth/koth:shop:close', JSON.stringify({}));
 }

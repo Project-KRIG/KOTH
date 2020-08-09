@@ -30,5 +30,6 @@ server_export "GetPlayerKD"
 files {
     "client/html/index.html",
     "client/html/style.css",
+    "client/html/reset.css",
     "client/html/listener.js",
 }
