@@ -67,7 +67,6 @@ RegisterNUICallback("GenderSelect", function(data, cb)
     KOTHUI = true,
     ChooseTeam = true,
   })
-  KOTH.DebugPrint("Player chose " .. data.Gender .. " as thier model.")
   KOTH.DebugPrint("Team menu opened.")
 end)
 

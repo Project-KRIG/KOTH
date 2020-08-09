@@ -72,10 +72,11 @@ Roadmap/TODO List
 - [x] Add a spawn guard to maybe restrict players from entering enemy team spawns.
 - [ ] Update UI's to look better (react).
 - [ ] Add chat commands (bug report, help, etc.).
-- [ ] Add local voip system.
-- [ ] Add radio system for team radios.
+- [x] Add local voip system.
+- [x] Add radio system for team radios.
+- [x] Add mumble filters for radio sounds.
 - [x] TP/kill players if they go outside the AOP.
-
+- [ ] Make weather and time sync across clients.
 
 If you find any bugs or have any sugestions to add to the resource please add them to the forum post on the fivem forums or submit a feature request using the [issues](https://github.com/The-Neco/KOTH/issues) section of github.
 
