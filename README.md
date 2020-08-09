@@ -16,7 +16,7 @@ How Do I install KOTH on my server?
 
 It's pretty simple
 
-1. Download the latest Koth-[Version Number] from the [releases](https://github.com/The-Neco/KOTH/releases) section of this repo.
+1. Download the latest koth from the [releases](https://github.com/The-Neco/KOTH/releases/latest) section of this repo.
 2. Drag the `koth` folder to the resources folder in your server. (Make sure the folder name is all lowercase `koth` otherwise the UI will not work)
 3. Add `ensure baseevents` to your `server.cfg`
 4. Add `ensure koth` to your `server.cfg`
@@ -33,6 +33,15 @@ In `shared/init.lua` there are a few lines that allow for configuration of the g
 `KOTH.PrioZoneTimer` This is the time in seconds that it takes for the priority circle to move.</br>
 `Koth.WinThreshold` This is the amount of points needed to win.</br>
 `KOTH.Spawn` This is where the players with no team spawn for the first time.</br>
+`KOTH.LockTeamsIfUneaven` This will lock the teams if they are uneven.</br>
+`KOTH.FriendlyFire` This toggles friendly fire.</br>
+`KOTH.TimeEnabled` This toggles time being enabled `true` = Time will tick for all clients `false` = Time will be frozen for all clients.</br>
+`KOTH.WeatherEnabled` This toggles weather being enabled `true` = Weather will change if the percentage check succeeds. `false` = The weather will be frozen for all clients.</br>
+`KOTH.WeatherTypes` This is a table of all of the weather types enabled for this gamemode, remove/add ones that you want.</br>
+`KOTH.Mumble.Config.Range` This is the range that players can hear other players on local chat.</br>
+`KOTH.Mumble.Config.RadioControl` This is the control key for the radio's push to talk.</br>
+`KOTH.ShowMap` This toggles the minimap.</br>
+`KOTH.Weapons` This is a table containing all of the weapons in the shop. (use weapons already in the table as an example to add more)</br>
 
 Another file you are able to edit is the `shared/maps.lua` this file allows you to add more mapps to the gamemode.
 
