@@ -9,6 +9,19 @@ KOTH.WinThreshold = 100 -- Amount of points required to win
 KOTH.Spawn = {x = -75.5505, y = -819.929, z = 326.175} -- Set spawn for players who have not selected a team.
 KOTH.LockTeamsIfUneaven = false -- Lock the teams if they are uneven.
 KOTH.FriendlyFire = true -- Toggle friendly fire.
+KOTH.TimeEnabled = true -- Wheather time should be frozen.
+KOTH.WeatherEnabled = true -- Toggle weather enabled.
+KOTH.WeatherChance = 20 -- Percentage chance that the weather changes every 5 minutes.
+KOTH.WeatherTypes = {
+  "CLEAR",
+  "EXTRASUNNY",
+  "CLOUDS",
+  "OVERCAST",
+  "RAIN",
+  "THUNDER",
+  "SMOG",
+  "FOGGY",
+}
 
 
 --[[ MUMBLE CONFIG ]]
@@ -19,6 +32,17 @@ KOTH.Mumble.Config = {
 }
 
 --[[ END OF MUMBLE CONFIG]]
+
+-- UI
+KOTH.ShowMap = true
+
+
+-- SHOP
+
+KOTH.Weapons = {
+  ["Pistol"] = {Model = `weapon_pistol`, levelReq = 5, price = 200},
+  ["SMG"] = {Model = `weapon_smg`, levelReq = 5, price = 200},
+}
 
 
 --DO NOT TOUCH
@@ -96,10 +120,15 @@ if not IsDuplicityVersion() then
 end
 
 KOTH.CurrentMap = 0
+KOTH.Minute = 0
+KOTH.Hour = 8
+KOTH.WeatherTimer = 0
+KOTH.Weather = "EXTRASUNNY"
 KOTH.CurrentTeam = "None"
 KOTH.PointTicker = 0
 KOTH.Winning = "None"
 KOTH.Ready = true
+<<<<<<< HEAD
 
 
 -- UI
@@ -120,3 +149,5 @@ KOTH.Weapons = {
   --["Knife"] = {Model = 'weapon_knife', levelReq = 5, price = 200},
   --["Special Carbine"] = {Model = 'weapon_specialcarbine', levelReq = 5, price = 200},
 }
+=======
+>>>>>>> a8c3a17c983c8f6cda2bc9ca917ee3fac26cc88d
