@@ -65,7 +65,7 @@ Roadmap/TODO List
 - [x] Add a "resource needs updating" warning to the console if the server owners version is out of date.
 - [ ] Add vehicles shop to the gamemode where players can purchase vehicles depending on thier level.
 - [ ] Add weapon shops where players are able to use thier money to buy different guns for this life.
-- [ ] Allow the player to see thier rank, XP and money.
+- [x] Allow the player to see thier rank, XP and money.
 - [x] Add exports to allow for external resources to interact with KOTH.
 - [x] Add a friendly fire config option.
 - [x] Add spawn immunity to prevent spawn camping.
