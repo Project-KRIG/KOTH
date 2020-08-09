@@ -76,7 +76,7 @@ Roadmap/TODO List
 - [x] Add radio system for team radios.
 - [x] Add mumble filters for radio sounds.
 - [x] TP/kill players if they go outside the AOP.
-- [ ] Make weather and time sync across clients.
+- [x] Make weather and time sync across clients.
 
 If you find any bugs or have any sugestions to add to the resource please add them to the forum post on the fivem forums or submit a feature request using the [issues](https://github.com/The-Neco/KOTH/issues) section of github.
 
