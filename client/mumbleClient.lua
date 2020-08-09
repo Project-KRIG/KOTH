@@ -25,11 +25,14 @@ function round(num, numDecimalPlaces)
 end
 
 Citizen.CreateThread(function()
+  
   while KOTH.Mumble.Players[LocalServerID] == nil do
     Citizen.Wait(500)
   end
   while true do
     Citizen.Wait(0)
+
+    
 
     local RadioActive = KOTH.Mumble.Players[LocalServerID].IsTalking or false
 

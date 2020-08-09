@@ -203,7 +203,38 @@ button {
   background-color: rgba(38, 149, 255, 0.5);
 }
 
-#Points {
+#money-hud {
+  color: #85bb65;
+}
+
+#player-stats {
+  position: absolute;
+  left: 90%;
+  top: 75%;
+  transform: translate(-5%, -10%);
+}
+
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #1e272e;
+  text-align: center;
+  line-height: 30px;
+  color: #d4eaff;
+  text-shadow: 0 0 0 transparent, 0 0 10px #2695ff, 0 0 10px rgba(38, 149, 255, 0.5), 0 0 20px #2695ff, 0 0 100px #2695ff, 0 0 600px #2695ff, 0 0 900px #2695ff, 0 0000px #2695ff;
+}
+
+#player-stats h2 {
+  margin: 10px;
+  display: inline-block;
+}
+
+#points {
   display: block;
   position: absolute;
   width: 10%;
@@ -215,11 +246,11 @@ button {
   border: none;
 }
 
-#Points h1 {
+#points h1 {
   font-size: 2vh;
 }
 
-#Points p {
+#points p {
   font-size: 1.5vh;
   font-weight: bold;
   text-shadow:

@@ -100,3 +100,7 @@ KOTH.CurrentTeam = "None"
 KOTH.PointTicker = 0
 KOTH.Winning = "None"
 KOTH.Ready = true
+
+
+-- UI
+KOTH.ShowMap = true

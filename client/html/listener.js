@@ -1,11 +1,24 @@
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 0
+})
+
+function move(width, maxLvl, curLvl) {
+    var elem = document.getElementById("myBar");
+    elem.style.width = width + "%";
+    elem.innerHTML = curLvl + "/" + maxLvl
+}
+
+
 $(function()
 {
     $('#items-container').show();
     $('#wep-container').hide();
     $('#veh-container').hide();
+    var money = 0
     window.addEventListener('message', function(event)
     {
-
 
       if (event.data.KOTHUI == true) {
         document.getElementById("KOTHUI").style.display = "block";
@@ -57,17 +70,21 @@ $(function()
         document.getElementById("Win").style.display = "none";
         document.getElementById("WinText").innerHTML = "";
       }
+
+      if (event.data.money != null) {
+        money = event.data.money
+        console.log(money)
+        $('#money-hud').html(formatter.format(money))
+      }
     });
 
-
     // THE SHOP
-
+  
     // Items
     $('#item-btn').click(function() {
       $('#items-container').show();
       $('#wep-container').hide();
       $('#veh-container').hide();
-      console.log("FUCK")
     })
     
     // WPep

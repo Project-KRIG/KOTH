@@ -9,6 +9,16 @@ AddEventHandler("KOTH:OpenStartUi", function()
   KOTH.DebugPrint("Start UI Opened.")
 end)
 
+RegisterNetEvent('koth:ui:money')
+AddEventHandler('koth:ui:money', function()
+    local money = KOTH.GetMoney()
+    print(money)
+    SendNUIMessage({
+      money = money
+    })
+end)
+
+
 -- SHOP START
 RegisterCommand('koth:shop:show', function(source, args, rawCommand)
 
@@ -148,3 +158,5 @@ AddEventHandler("KOTH:UpdatePoints", function(tab)
   })
   KOTH.DebugPrint("Current points Y:" .. tab.Yellow .. " G:" .. tab.Green .. " B:" .. tab.Blue .. ".")
 end)
+
+
