@@ -33,6 +33,17 @@ KOTH.Mumble.Config = {
 
 --[[ END OF MUMBLE CONFIG]]
 
+-- UI
+KOTH.ShowMap = true
+
+
+-- SHOP
+
+KOTH.Weapons = {
+  ["Pistol"] = {Model = `weapon_pistol`, levelReq = 5, price = 200},
+  ["SMG"] = {Model = `weapon_smg`, levelReq = 5, price = 200},
+}
+
 
 --DO NOT TOUCH
 KOTH.Teams = {}
@@ -117,15 +128,3 @@ KOTH.CurrentTeam = "None"
 KOTH.PointTicker = 0
 KOTH.Winning = "None"
 KOTH.Ready = true
-
-
--- UI
-KOTH.ShowMap = true
-
-
--- SHOP
-
-KOTH.Weapons = {
-  ["Pistol"] = {Model = `weapon_pistol`, levelReq = 5, price = 200},
-  ["SMG"] = {Model = `weapon_smg`, levelReq = 5, price = 200},
-}
