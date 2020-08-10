@@ -62,7 +62,7 @@ $(function()
         document.getElementById("Shop").style.display = "none";
       }
       if (event.data.PlayerCounts == true) {
-        $("#Yellow").html("Yellow: " + event.data.Yellow + " players").css("font-family", 'Montserrat');z
+        $("#Yellow").html("Yellow: " + event.data.Yellow + " players").css("font-family", 'Montserrat');
         $("#Green").html("Green: " + event.data.Green + " players").css("font-family", 'Montserrat');
         $("#Blue").html("Blue: " + event.data.Blue + " players").css("font-family", 'Montserrat');
       }
@@ -97,16 +97,16 @@ $(function()
         }
       }
     });
-    
+
     // THE SHOP
-  
+
     // Items
     $('#item-btn').click(function() {
       $('#items-container').show();
       $('#wep-container').hide();
       $('#veh-container').hide();
     })
-    
+
     // WPep
     $('#wep-btn').click(function() {
       $('#wep-container').show();
@@ -114,7 +114,7 @@ $(function()
       $('#veh-container').hide();
       console.log("FUCK")
     })
-    
+
     // Veh
     $('#veh-btn').click(function() {
       $('#veh-container').show();
@@ -146,9 +146,9 @@ function closeShop() {
   $.post('http://koth/koth:shop:close', JSON.stringify({}));
 }
 
-function buyWeapon(elem) { 
+function buyWeapon(elem) {
   console.log(elem.id)
   $.post('http://koth/koth:ui:buyWeapons', JSON.stringify({
-    weapon: elem.id 
+    weapon: elem.id
   }))
-} 
+}
