@@ -22,9 +22,10 @@ $(function()
     window.addEventListener('message', function(event)
     {
 
-      if (event.data.level) {
+      var userLevel = event.data.level
+      if (userLevel) {
         move(event.data.perc, event.data.maxLvl, event.data.curLvl)
-        $('#lvl-hud').html("Lvl: " + event.data.level)
+        $('#lvl-hud').html("Lvl: " + userLevel)
       }
 
       if (event.data.KOTHUI == true) {
@@ -84,17 +85,18 @@ $(function()
         $('#money-hud').html(formatter.format(money))
       }
 
+      var buy = "Buy"
+      var notBuy = "Not available"
+      var disabled = "disabled"
       var weapons = event.data.weapons;
-      for (let [key, value] of Object.entries(weapons)) {
-        $('#weapon-list').append(
-          '<div id="weapon-box"><img src="./assets/' + value.Model +'.png"><button id="'+ key +'" onclick="buyWeapon(this)">Buy</button><p> ' + formatter.format(value.price) + ' | Lvl: ' + value.levelReq +'</p></div>'
-          )
+      userLvl = event.data.userLvl
+      if (userLvl) {
+        for (let [key, value] of Object.entries(weapons)) {
+          $('#weapon-list').append(
+          '<div id="weapon-box"><img src="./assets/' + value.Model +'.png"><button id="'+ key +'" onclick="buyWeapon(this)" ' + (userLvl < value.levelReq ? disabled : null) + '>'+ (userLvl < value.levelReq ? notBuy : buy) +'</button><p> ' + formatter.format(value.price) + ' | Lvl: ' + value.levelReq +'</p></div>')
+        }
       }
-
-      
     });
-
-    
     
     // THE SHOP
   
