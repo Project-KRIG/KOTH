@@ -1,3 +1,22 @@
+-- SHOP 
+Citizen.CreateThread(function()
+  while true do 
+    Citizen.Wait(5)
+    local coords = GetEntityCoords(PlayerPedId())
+    for k,v in ipairs(KOTH.ShopLocation) do 
+      if (GetDistanceBetweenCoords(coords, v.x, v.y, v.z, true) < 4.0) then
+        KOTH.DrawText(v.x, v.y, v.z, '~g~[E]~s~ to open shop')
+      end
+    end
+  end
+end)
+
+RegisterCommand("getfuck", function(source, args, rawCommand)
+  local player = PlayerPedId()
+  local coords = GetEntityCoords(player)
+  print(coords)
+end)
+
 RegisterNetEvent("KOTH:OpenStartUi")
 AddEventHandler("KOTH:OpenStartUi", function()
   SendNUIMessage({
@@ -188,3 +207,24 @@ AddEventHandler("KOTH:UpdatePoints", function(tab)
   })
   KOTH.DebugPrint("Current points Y:" .. tab.Yellow .. " G:" .. tab.Green .. " B:" .. tab.Blue .. ".")
 end)
+
+KOTH.DrawText = function(x, y, z, text)
+  local onScreen, _x, _y = World3dToScreen2d(x, y, z)
+  local p = GetGameplayCamCoords()
+  local distance = GetDistanceBetweenCoords(p.x, p.y, p.z, x, y, z, 1)
+  local scale = (1 / distance) * 2
+  local fov = (1 / GetGameplayCamFov()) * 100
+  local scale = scale * fov
+  if onScreen then
+      SetTextScale(0.35, 0.35)
+      SetTextFont(4)
+      SetTextProportional(1)
+      SetTextColour(255, 255, 255, 215)
+      SetTextEntry("STRING")
+      SetTextCentre(1)
+      AddTextComponentString(text)
+      DrawText(_x,_y)
+      local factor = (string.len(text)) / 370
+      DrawRect(_x,_y+0.0125, 0.015+ factor, 0.03, 41, 11, 41, 68)
+  end
+end

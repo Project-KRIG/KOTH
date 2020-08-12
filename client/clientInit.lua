@@ -21,3 +21,11 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
+
+AddEventHandler('koth:getObject', function(cb)
+	cb(KOTH)
+end)
+
+function getObject()
+	return KOTH
+end

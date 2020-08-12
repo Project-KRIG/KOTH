@@ -51,3 +51,5 @@ KOTH.SetPlayerModel = function(male)
     SetResourceKvp("KOTH:Model", "mp_f_freemode_01")
   end
 end
+
+

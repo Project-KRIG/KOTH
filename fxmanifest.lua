@@ -15,7 +15,8 @@ shared_scripts {
 }
 
 client_scripts {
-	"client/*.lua",
+  "client/*.lua",
+  "client/ClientGarage.net.dll"
 }
 
 server_scripts {

@@ -10,6 +10,7 @@ AddEventHandler("KOTH:SyncMumblePlayers", function(PTab)
   KOTH.Mumble.Players = PTab
 end)
 
+
 RegisterNetEvent("KOTH:SetMumbleChannel")
 AddEventHandler("KOTH:SetMumbleChannel", function(source, channel)
   KOTH.Mumble.Players[source].Channel = channel

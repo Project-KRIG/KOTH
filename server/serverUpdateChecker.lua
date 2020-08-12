@@ -1,3 +1,12 @@
+AddEventHandler('koth:getObject', function(cb)
+	cb(KOTH)
+end)
+
+function getSharedObject()
+	return KOTH
+end
+
+
 KOTH.VersionFile = LoadResourceFile(GetCurrentResourceName(), "version.json")
 KOTH.Version = json.decode(KOTH.VersionFile).version
 

@@ -136,8 +136,6 @@ KOTH.CurrentTeam = "None"
 KOTH.PointTicker = 0
 KOTH.Winning = "None"
 KOTH.Ready = true
-<<<<<<< HEAD
-=======
 
 
 -- UI
@@ -161,4 +159,3 @@ KOTH.Weapons = {
   --["Knife"] = {Model = 'weapon_knife', levelReq = 5, price = 200},
   --["Special Carbine"] = {Model = 'weapon_specialcarbine', levelReq = 5, price = 200},
 }
->>>>>>> 0ae24cdaa8e301bcca1d24372054360b92873fb8
