@@ -1,5 +1,5 @@
 RegisterCommand("bike", function(source, args, rawCommand)
-  KOTH.CreateVehicle("TriBike3", 100)
+  KOTH.CreateVehicle("tribike", 100)
 end)
 
 

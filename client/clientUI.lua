@@ -1,20 +1,30 @@
 -- SHOP 
 Citizen.CreateThread(function()
+  while not KOTH.Ready do
+    Citizen.Wait(500)
+  end
   while true do 
     Citizen.Wait(5)
-    local coords = GetEntityCoords(PlayerPedId())
-    for k,v in ipairs(KOTH.ShopLocation) do 
-      if (GetDistanceBetweenCoords(coords, v.x, v.y, v.z, true) < 4.0) then
-        KOTH.DrawText(v.x, v.y, v.z, '~g~[E]~s~ to open shop')
+
+      for k,v in pairs(KOTH.Teams) do
+        local distance = (GetEntityCoords(PlayerPedId()) - vector3(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z))
+        if #distance < 5.0 then
+          KOTH.DrawText(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z, '~g~[E]~s~ to open shop')
+          if IsControlJustPressed(0, 38) then
+            TriggerEvent('koth:shop:show')
+          end
+        end
       end
-    end
+
   end
 end)
 
 RegisterCommand("getfuck", function(source, args, rawCommand)
   local player = PlayerPedId()
   local coords = GetEntityCoords(player)
-  print(coords)
+  for k,v in ipairs(KOTH.Teams[KOTH.CurrentTeam].Spawns.Player) do
+    print(v.x, v.y, v.z)
+  end
 end)
 
 RegisterNetEvent("KOTH:OpenStartUi")
@@ -37,7 +47,6 @@ AddEventHandler('koth:ui:money', function()
       money = money
     })
 end)
-
 
 RegisterNetEvent('koth:ui:level')
 AddEventHandler('koth:ui:level', function()
@@ -71,7 +80,8 @@ RegisterNUICallback('koth:ui:buyWeapons', function(data)
 end)
 
 -- SHOP START
-RegisterCommand('koth:shop:show', function(source, args, rawCommand)
+RegisterNetEvent('koth:shop:show')
+AddEventHandler('koth:shop:show', function()
   SendNUIMessage({
     ShopUI = true
   })

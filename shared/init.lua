@@ -33,24 +33,8 @@ KOTH.Mumble.Config = {
 
 --[[ END OF MUMBLE CONFIG]]
 
--- UI
-KOTH.ShowMap = true
 
 
--- SHOP
-
-KOTH.Weapons = {
-  ["Pistol"] = {Model = 'weapon_pistol', levelReq = 5, price = 200},
-  ["SMG"] = {Model = 'weapon_smg', levelReq = 5, price = 200},
-  --["RPG"] = {Model = 'weapon_rpg', levelReq = 5, price = 200},
-  ["Carbine Rifle"] = {Model = 'weapon_carbinerifle', levelReq = 5, price = 200},
-  ["Assault Rifle"] = {Model = 'weapon_assaultrifle', levelReq = 5, price = 200},
-  ["Revolver"] = {Model = 'weapon_revolver', levelReq = 5, price = 200},
-  --["Marksman Rifle"] = {Model = 'weapon_marksmanrifle', levelReq = 5, price = 200},
-  --["Combat LMG"] = {Model = 'weapon_combatmg_mk2', levelReq = 5, price = 200},
-  --["Knife"] = {Model = 'weapon_knife', levelReq = 5, price = 200},
-  --["Special Carbine"] = {Model = 'weapon_specialcarbine', levelReq = 5, price = 200},
-}
 
 
 --DO NOT TOUCH
@@ -59,13 +43,15 @@ KOTH.Players = {}
 KOTH.Mumble.Channels = {}
 KOTH.Mumble.Players = {}
 KOTH.Mumble.ClientData = {}
+
 KOTH.Teams["Yellow"] = {
   Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
   Players = {},
   Points = 0,
   Colors = {Shirt = 5, Hat = 6, Legs = 3},
   Count = 0,
-  Channel = 1
+  Channel = 1,
+  ShopLocation = {x = 1376.0, y = 2797.7, z = 50.5}
 }
 KOTH.Teams["Green"] = {
   Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
@@ -73,7 +59,8 @@ KOTH.Teams["Green"] = {
   Points = 0,
   Colors = {Shirt = 0, Hat = 9, Legs = 5},
   Count = 0,
-  Channel = 2
+  Channel = 2,
+  ShopLocation = {x = 0.0, y = 0.0, z = 0.0}
 }
 KOTH.Teams["Blue"] = {
   Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
@@ -81,7 +68,8 @@ KOTH.Teams["Blue"] = {
   Points = 0,
   Colors = {Shirt = 3, Hat = 7, Legs = 4},
   Count = 0,
-  Channel = 3
+  Channel = 3,
+  ShopLocation = {x = 0.0, y = 0.7, z = 0.5}
 }
 KOTH.Circle = {
   Coords = {x = 0.0, y = 0.0, z = 0.0},
@@ -140,10 +128,6 @@ KOTH.Ready = true
 
 -- UI
 KOTH.ShowMap = true
-
-KOTH.ShopLocation = {
-  {x = 1376.64, y = 2796.96, z = 50.5}
-}
 
 -- SHOP
 
