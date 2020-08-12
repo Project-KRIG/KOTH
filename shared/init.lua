@@ -133,6 +133,9 @@ KOTH.Ready = true
 -- UI
 KOTH.ShowMap = true
 
+KOTH.ShopLocation = {
+  {x = 1376.64, y = 2796.96, z = 50.5}
+}
 
 -- SHOP
 
