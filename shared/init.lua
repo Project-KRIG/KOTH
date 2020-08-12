@@ -2,7 +2,7 @@ KOTH = {}
 KOTH.Mumble = {}
 KOTH.Ready = false --DO NOT TOUCH
 KOTH.Debug = false
-KOTH.XPTimer = 1 -- Time in seconds it takes to gain XP while in the zone
+KOTH.XPTimer = 20 -- Time in seconds it takes to gain XP while in the zone
 KOTH.PointTimer = 5 -- Time in seconds it takes for the winning team to gain a point
 KOTH.PrioZoneTimer = 60 -- Time in seconds it takes for the Priority Circle to move
 KOTH.WinThreshold = 100 -- Amount of points required to win
@@ -40,8 +40,16 @@ KOTH.ShowMap = true
 -- SHOP
 
 KOTH.Weapons = {
-  ["Pistol"] = {Model = `weapon_pistol`, levelReq = 5, price = 200},
-  ["SMG"] = {Model = `weapon_smg`, levelReq = 5, price = 200},
+  ["Pistol"] = {Model = 'weapon_pistol', levelReq = 5, price = 200},
+  ["SMG"] = {Model = 'weapon_smg', levelReq = 5, price = 200},
+  --["RPG"] = {Model = 'weapon_rpg', levelReq = 5, price = 200},
+  ["Carbine Rifle"] = {Model = 'weapon_carbinerifle', levelReq = 5, price = 200},
+  ["Assault Rifle"] = {Model = 'weapon_assaultrifle', levelReq = 5, price = 200},
+  ["Revolver"] = {Model = 'weapon_revolver', levelReq = 5, price = 200},
+  --["Marksman Rifle"] = {Model = 'weapon_marksmanrifle', levelReq = 5, price = 200},
+  --["Combat LMG"] = {Model = 'weapon_combatmg_mk2', levelReq = 5, price = 200},
+  --["Knife"] = {Model = 'weapon_knife', levelReq = 5, price = 200},
+  --["Special Carbine"] = {Model = 'weapon_specialcarbine', levelReq = 5, price = 200},
 }
 
 
@@ -128,6 +136,8 @@ KOTH.CurrentTeam = "None"
 KOTH.PointTicker = 0
 KOTH.Winning = "None"
 KOTH.Ready = true
+<<<<<<< HEAD
+=======
 
 
 -- UI
@@ -151,3 +161,4 @@ KOTH.Weapons = {
   --["Knife"] = {Model = 'weapon_knife', levelReq = 5, price = 200},
   --["Special Carbine"] = {Model = 'weapon_specialcarbine', levelReq = 5, price = 200},
 }
+>>>>>>> 0ae24cdaa8e301bcca1d24372054360b92873fb8

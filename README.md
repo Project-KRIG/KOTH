@@ -79,8 +79,8 @@ Roadmap/TODO List
 - [x] Add a friendly fire config option.
 - [x] Add spawn immunity to prevent spawn camping.
 - [x] Add a spawn guard to maybe restrict players from entering enemy team spawns.
-- [ ] Update UI's to look better (react).
-- [ ] Add chat commands (bug report, help, etc.).
+- [x] Update UI's to look better.
+- [x] Add chat commands (bug report, help, etc.).
 - [x] Add local voip system.
 - [x] Add radio system for team radios.
 - [x] Add mumble filters for radio sounds.
