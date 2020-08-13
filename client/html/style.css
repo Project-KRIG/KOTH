@@ -346,9 +346,12 @@ nav li {
 
 #items-container, #wep-container, #veh-container {
   padding: 5em 0;
-  overflow: auto;
 }
 
+#wep-wrapper {
+  height: 50vh;
+  overflow: auto;
+}
 
 #wep-container #weapon-list {
   width: 100%;
@@ -363,45 +366,18 @@ nav li {
   float: left;
   margin-bottom: 10px;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: #36444f;
-  width: 25%;
+  width: 24%;
   height: 160px;  
 }
 
-#weapon-box button {
-  position: absolute;
-  margin-top: 6em;
-  display: flex;
-  font-family: 'Montserrat', sans-serif;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  background: #1e272e;
-  color: #fff;
-  font-weight: 600;
-  font-size: 16px;
-  padding: 5px 25px;
+
+#weapon-box img {
+
 }
 
 #weapon-box p {
-  position: absolute;
-  margin-top: 3em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-weight: 600;
 }
 
-#weapon-box img {
-  position: absolute;
-  margin-top: -5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 63px;
-  width: 185px;
+#weapon-box button {
 }

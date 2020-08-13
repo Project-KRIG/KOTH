@@ -93,7 +93,7 @@ $(function()
       if (userLvl) {
         for (let [key, value] of Object.entries(weapons)) {
           $('#weapon-list').append(
-          '<div id="weapon-box"><img src="./assets/' + value.Model +'.png"><button id="'+ key +'" onclick="buyWeapon(this)" ' + (userLvl < value.levelReq ? disabled : null) + '>'+ (userLvl < value.levelReq ? notBuy : buy) +'</button><p> ' + formatter.format(value.price) + ' | Lvl: ' + value.levelReq +'</p></div>')
+          '<div id="weapon-box"><img src="./assets/' + value.Model +'.png"><p> ' + formatter.format(value.price) + ' | Lvl: ' + value.levelReq +'</p><button id="'+ key +'" onclick="buyWeapon(this)" ' + (userLvl < value.levelReq ? disabled : null) + '>'+ (userLvl < value.levelReq ? notBuy : buy) +'</button></div>')
         }
       }
     });

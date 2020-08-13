@@ -5,7 +5,6 @@ Citizen.CreateThread(function()
   end
   while true do 
     Citizen.Wait(5)
-
       for k,v in pairs(KOTH.Teams) do
         local distance = (GetEntityCoords(PlayerPedId()) - vector3(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z))
         if #distance < 5.0 then
@@ -15,7 +14,6 @@ Citizen.CreateThread(function()
           end
         end
       end
-
   end
 end)
 
@@ -35,7 +33,6 @@ AddEventHandler("KOTH:OpenStartUi", function()
   })
   SetNuiFocus(true, true)
   TriggerServerEvent("KOTH:RequstPlayerCount")
-  --TriggerEvent('koth:ui:sendWeapons')
   KOTH.DebugPrint("Start UI Opened.")
 end)
 
@@ -62,7 +59,8 @@ AddEventHandler('koth:ui:level', function()
       maxLvl = MaxLvl
     })
     TriggerEvent('koth:ui:sendWeapons')
-end)
+    TriggerEvent('koth:ui:sendVehicles')
+  end)
 
 RegisterNetEvent('koth:ui:sendWeapons')
 AddEventHandler('koth:ui:sendWeapons', function()
@@ -71,6 +69,14 @@ AddEventHandler('koth:ui:sendWeapons', function()
   SendNUIMessage({
     weapons = weapons,
     userLvl = userLvl
+  })
+end)
+
+RegisterNetEvent('koth:ui:sendVehicles')
+AddEventHandler('koth:ui:sendVehicles', function()
+  local vehicles = KOTH.Vehicles
+  SendNUIMessage({
+    vehicles = vehicles
   })
 end)
 
