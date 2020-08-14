@@ -31,7 +31,7 @@ Citizen.CreateThread(function()
     KOTH.PrioCircle.Size = KOTH.Maps[id].Circle.Size/6
     KOTH.DebugPrint("Map set to " .. id)
     if IsDuplicityVersion() then
-      TriggerClientEvent("KOTH:SetMap", -1, id)
+      KOTH.TriggerClientEvent("KOTH:SetMap", -1, {CurrentMap = id})
     else
       KOTH.CreateBlips()
     end

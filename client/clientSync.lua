@@ -11,16 +11,14 @@ Citizen.CreateThread(function()
   end
 end)
 
-RegisterNetEvent("KOTH:SyncTime")
-AddEventHandler("KOTH:SyncTime", function(hour, minute)
-  KOTH.Hour = hour
-  KOTH.Minute = minute
+KOTH.CreateEvent("KOTH:SyncTime", function(params)
+  KOTH.Hour = params.hour
+  KOTH.Minute = params.minute
   NetworkOverrideClockTime(KOTH.Hour, KOTH.Minute, 0)
 end)
 
-RegisterNetEvent("KOTH:SyncWeather")
-AddEventHandler("KOTH:SyncWeather", function(weather)
-  KOTH.Weather = weather
+KOTH.CreateEvent("KOTH:SyncWeather", function(params)
+  KOTH.Weather = params.weather
   SetWeatherTypeNowPersist(KOTH.Weather)
   KOTH.DebugPrint("Weather updated, Weather: " .. KOTH.Weather)
 end)

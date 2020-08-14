@@ -7,18 +7,16 @@ KOTH.JoinTeam = function(player, team)
     KOTH.Teams[team].Players[player] = true
     KOTH.Players[player].Team = team
   end
-  TriggerEvent("KOTH:SetMumbleChannel", KOTH.Teams[team].Channel, player)
-  TriggerClientEvent("KOTH:SetUniform", player, KOTH.Teams[team].Colors, team)
+  KOTH.TriggerClientEvent("KOTH:SetUniform", player, {Clothes = KOTH.Teams[team].Colors, Team = team})
+  KOTH.TriggerEvent("KOTH:SetMumbleChannel", {Channel = KOTH.Teams[team].Channel, source = player})
   KOTH.GetPlayerCounts()
 end
 
-RegisterNetEvent("KOTH:JoinTeam")
-AddEventHandler("KOTH:JoinTeam", function(team)
-  KOTH.JoinTeam(source, team)
+KOTH.CreateEvent("KOTH:JoinTeam", function(params)
+  KOTH.JoinTeam(params.source, params.Team)
 end)
 
-RegisterNetEvent("KOTH:RequstPlayerCount")
-AddEventHandler("KOTH:RequstPlayerCount", function()
+KOTH.CreateEvent("KOTH:RequstPlayerCount", function(params)
   KOTH.GetPlayerCounts()
 end)
 
@@ -49,7 +47,7 @@ KOTH.GetPlayerCounts = function()
   KOTH.Teams["Blue"].Count = BlueCount
   KOTH.Teams["Green"].Count = GreenCount
   KOTH.DebugPrint("Current player counts Y:" .. YellowCount .. " G:" .. GreenCount .. " B:" .. BlueCount .. ".")
-  TriggerClientEvent("KOTH:UpdatePlayerCount", -1, {Yellow = YellowCount, Green = GreenCount, Blue = BlueCount})
+  KOTH.TriggerClientEvent("KOTH:UpdatePlayerCount", -1, {Yellow = YellowCount, Green = GreenCount, Blue = BlueCount})
 end
 
 KOTH.AddTeamPoints = function(team, amount)

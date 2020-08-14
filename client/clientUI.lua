@@ -1,9 +1,9 @@
--- SHOP 
+-- SHOP
 Citizen.CreateThread(function()
   while not KOTH.Ready do
     Citizen.Wait(500)
   end
-  while true do 
+  while true do
     Citizen.Wait(5)
       for k,v in pairs(KOTH.Teams) do
         local distance = (GetEntityCoords(PlayerPedId()) - vector3(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z))
@@ -32,7 +32,7 @@ AddEventHandler("KOTH:OpenStartUi", function()
     StartUI = true,
   })
   SetNuiFocus(true, true)
-  TriggerServerEvent("KOTH:RequstPlayerCount")
+  KOTH.TriggerServerEvent("KOTH:RequstPlayerCount")
   KOTH.DebugPrint("Start UI Opened.")
 end)
 
@@ -146,7 +146,7 @@ RegisterNUICallback("GenderSelect", function(data, cb)
 end)
 
 RegisterNUICallback("TeamSelect", function(data, cb)
-  TriggerServerEvent("KOTH:JoinTeam", data.Team)
+  KOTH.TriggerServerEvent("KOTH:JoinTeam", {Team = data.Team})
   SendNUIMessage({
     KOTHUI = true,
     ChooseTeam = false,
@@ -155,16 +155,15 @@ RegisterNUICallback("TeamSelect", function(data, cb)
   KOTH.DebugPrint("Player joined team " .. data.Team .. ".")
 end)
 
-RegisterNetEvent("KOTH:UpdatePlayerCount")
-AddEventHandler("KOTH:UpdatePlayerCount", function(tab)
+KOTH.CreateEvent("KOTH:UpdatePlayerCount", function(params)
   SendNUIMessage({
     PlayerCounts = true,
-    Yellow = tab.Yellow,
-    Green = tab.Green,
-    Blue = tab.Blue,
+    Yellow = params.Yellow,
+    Green = params.Green,
+    Blue = params.Blue,
   })
   if KOTH.LockTeamsIfUneaven then
-    if tab.Yellow > tab.Blue or tab.Yellow > tab.Green then
+    if params.Yellow > params.Blue or params.Yellow > params.Green then
       SendNUIMessage({
         LockTeam = true,
         TeamToLock = "Yellow",
@@ -175,7 +174,7 @@ AddEventHandler("KOTH:UpdatePlayerCount", function(tab)
         TeamToUnlock = "Yellow",
       })
     end
-    if tab.Blue > tab.Yellow or tab.Blue > tab.Green then
+    if params.Blue > params.Yellow or params.Blue > params.Green then
       SendNUIMessage({
         LockTeam = true,
         TeamToLock = "Blue",
@@ -186,7 +185,7 @@ AddEventHandler("KOTH:UpdatePlayerCount", function(tab)
         TeamToUnlock = "Blue",
       })
     end
-    if tab.Green > tab.Blue or tab.Green > tab.Yellow then
+    if params.Green > params.Blue or params.Green > params.Yellow then
       SendNUIMessage({
         LockTeam = true,
         TeamToLock = "Green",
@@ -198,7 +197,7 @@ AddEventHandler("KOTH:UpdatePlayerCount", function(tab)
       })
     end
   end
-  KOTH.DebugPrint("Current player counts Y:" .. tab.Yellow .. " G:" .. tab.Green .. " B:" .. tab.Blue .. ".")
+  KOTH.DebugPrint("Current player counts Y:" .. params.Yellow .. " G:" .. params.Green .. " B:" .. params.Blue .. ".")
 end)
 
 RegisterNetEvent("KOTH:ShowWin")

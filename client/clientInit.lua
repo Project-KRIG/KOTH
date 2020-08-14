@@ -1,7 +1,7 @@
 Citizen.CreateThread(function()
 	while true do
 		Wait(0)
-		
+
 		if NetworkIsSessionStarted() then
 			TriggerServerEvent('KOTH:ClientInitialized', {Level = KOTH.GetPlayerLevel(), XP = KOTH.GetPlayerXP(), Kills = KOTH.GetPlayerKills(), Deaths = KOTH.GetPlayerDeaths()})
 			Citizen.Wait(1000)
@@ -13,7 +13,7 @@ Citizen.CreateThread(function()
 			NetworkSetFriendlyFireOption(KOTH.FriendlyFire)
 			SetCanAttackFriendly(PlayerPedId(), true, true)
 			DisplayRadar(KOTH.ShowMap)
-			
+
 			TriggerEvent('koth:ui:money')
 			TriggerEvent('koth:ui:level')
 

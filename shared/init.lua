@@ -22,6 +22,7 @@ KOTH.WeatherTypes = {
   "SMOG",
   "FOGGY",
 }
+KOTH.DiscordWebhook = "***REMOVED***"
 
 
 --[[ MUMBLE CONFIG ]]
@@ -123,6 +124,7 @@ KOTH.Weather = "EXTRASUNNY"
 KOTH.CurrentTeam = "None"
 KOTH.PointTicker = 0
 KOTH.Winning = "None"
+KOTH.EventAuthKey = ""
 KOTH.Ready = true
 
 

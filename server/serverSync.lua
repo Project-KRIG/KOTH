@@ -15,15 +15,16 @@ Citizen.CreateThread(function()
       else
         KOTH.Minute = KOTH.Minute + 1
       end
-      TriggerClientEvent("KOTH:SyncTime", -1, KOTH.Hour, KOTH.Minute)
+      for k, v in pairs(KOTH.Players) do
+        KOTH.TriggerClientEvent("KOTH:SyncTime", k, {hour = KOTH.Hour, minute = KOTH.Minute})
+      end
     end
     if KOTH.WeatherEnabled then
       if KOTH.WeatherTimer == 150 then
         KOTH.WeatherTimer = 0
         if math.random(1, 100) < KOTH.WeatherChance then
           KOTH.Weather = KOTH.WeatherTypes[math.random(1, #KOTH.WeatherTypes)]
-          TriggerClientEvent("KOTH:SyncWeather", -1, KOTH.Weather)
-          KOTH.DebugPrint("Weather updated, Weather: " .. KOTH.Weather)
+          KOTH.TriggerClientEvent("KOTH:SyncWeather", -1, {weather = KOTH.Weather})
         end
       end
       KOTH.WeatherTimer = KOTH.WeatherTimer + 1

@@ -27,7 +27,7 @@ Citizen.CreateThread(function()
       local newx = CircleCoords.x + math.random(round2(min), round2(max))
       local newy = CircleCoords.y + math.random(round2(min), round2(max))
       local newCoords = {x = newx, y = newy, z = KOTH.PrioCircle.Coords.z}
-      TriggerClientEvent("KOTH:MovePriorityCircle", -1, newCoords)
+      KOTH.TriggerClientEvent("KOTH:MovePriorityCircle", -1, {PrioCircleCoords = newCoords})
       KOTH.PrioCircle.Coords = newCoords
       KOTH.DebugPrint("Priority circle updated.")
       KOTH.PrioCircle.Count = 0

@@ -20,19 +20,16 @@ KOTH.GetKD = function()
   return KD
 end
 
-RegisterNetEvent("KOTH:GetKill")
-AddEventHandler("KOTH:GetKill", function()
+KOTH.CreateEvent("KOTH:GetKill", function()
   KOTH.GetKill()
 end)
 
-
-RegisterNetEvent("KOTH:Died")
-AddEventHandler("KOTH:Died", function()
+KOTH.CreateEvent("KOTH:Died", function()
   KOTH.PlayerDied()
 end)
 
 KOTH.SpawnPoint = function()
-  TriggerEvent("KOTH:SetUniform", KOTH.Teams[KOTH.CurrentTeam].Colors, KOTH.CurrentTeam)
+  KOTH.TriggerEvent("KOTH:SetUniform", {Clothes = KOTH.Teams[team].Colors, Team = KOTH.CurrentTeam})
 end
 
 KOTH.DefaultSpawn = function()
