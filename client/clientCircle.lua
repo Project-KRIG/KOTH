@@ -35,14 +35,12 @@ function round2(num, numDecimalPlaces)
 	return tonumber(string.format("%." .. (numDecimalPlaces or 0) .. "f", num))
 end
 
-RegisterNetEvent("KOTH:SetMap")
-AddEventHandler("KOTH:SetMap", function(map)
-  KOTH.SetMap(map)
+KOTH.CreateEvent("KOTH:SetMap", function(params)
+  KOTH.SetMap(params.CurrentMap)
 end)
 
-RegisterNetEvent("KOTH:MovePriorityCircle")
-AddEventHandler("KOTH:MovePriorityCircle", function(coords)
-  KOTH.PrioCircle.Coords = coords
+KOTH.CreateEvent("KOTH:MovePriorityCircle", function(params)
+  KOTH.PrioCircle.Coords = params.PrioCircleCoords
   KOTH.CreateBlips()
   KOTH.DebugPrint("Priority circle updated.")
 end)

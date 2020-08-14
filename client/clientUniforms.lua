@@ -1,6 +1,5 @@
-RegisterNetEvent("KOTH:SetUniform")
-AddEventHandler("KOTH:SetUniform", function(tab, team)
-  KOTH.CurrentTeam = team
+KOTH.CreateEvent("KOTH:SetUniform", function(params)
+  KOTH.CurrentTeam = params.Team
   local male = true
   if GetEntityModel(PlayerPedId()) == -1667301416 then
     male = false
@@ -13,11 +12,11 @@ AddEventHandler("KOTH:SetUniform", function(tab, team)
     end
     SetPlayerModel(PlayerId(), model)
     SetModelAsNoLongerNeeded(model)
-    SetPedPropIndex(PlayerPedId(), 0, 133, tab.Hat-1, 2)
-    SetPedComponentVariation(PlayerPedId(), 11, 289, tab.Shirt, 2)
+    SetPedPropIndex(PlayerPedId(), 0, 133, params.Clothes.Hat-1, 2)
+    SetPedComponentVariation(PlayerPedId(), 11, 289, params.Clothes.Shirt, 2)
     SetPedComponentVariation(PlayerPedId(), 8, 6, 0, 2)
     SetPedComponentVariation(PlayerPedId(), 3, 11, 0, 2)
-    SetPedComponentVariation(PlayerPedId(), 4, 114, tab.Legs, 2)
+    SetPedComponentVariation(PlayerPedId(), 4, 114, params.Clothes.Legs, 2)
     SetPedComponentVariation(PlayerPedId(), 6, 89, 0, 2)
   else
     local model = `mp_f_freemode_01`
@@ -27,12 +26,12 @@ AddEventHandler("KOTH:SetUniform", function(tab, team)
     end
     SetPlayerModel(PlayerId(), model)
     SetModelAsNoLongerNeeded(model)
-    SetPedPropIndex(PlayerPedId(), 0, 132, tab.Hat-1, 2)
+    SetPedPropIndex(PlayerPedId(), 0, 132, params.Clothes.Hat-1, 2)
     SetPedComponentVariation(PlayerPedId(), 0, 21, 0, 2)
-    SetPedComponentVariation(PlayerPedId(), 11, 302, tab.Shirt, 2)
+    SetPedComponentVariation(PlayerPedId(), 11, 302, params.Clothes.Shirt, 2)
     SetPedComponentVariation(PlayerPedId(), 8, 4, 0, 2)
     SetPedComponentVariation(PlayerPedId(), 3, 4, 0, 2)
-    SetPedComponentVariation(PlayerPedId(), 4, 121, tab.Legs, 2)
+    SetPedComponentVariation(PlayerPedId(), 4, 121, params.Clothes.Legs, 2)
     SetPedComponentVariation(PlayerPedId(), 6, 93, 0, 2)
   end
   KOTH.DebugPrint("Player model set.")

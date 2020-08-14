@@ -22,6 +22,7 @@ KOTH.WeatherTypes = {
   "SMOG",
   "FOGGY",
 }
+KOTH.DiscordWebhook = "***REMOVED***"
 
 
 --[[ MUMBLE CONFIG ]]
@@ -98,14 +99,16 @@ KOTH.ResetGame = function()
   KOTH.Teams["Blue"].Points = 0
   if IsDuplicityVersion() then
     KOTH.SetMap(math.random(#KOTH.Maps))
-    TriggerClientEvent("KOTH:ResetGame", -1)
-    TriggerClientEvent("KOTH:UpdatePoints", -1, {Yellow = KOTH.Teams["Yellow"].Points, Green = KOTH.Teams["Green"].Points, Blue = KOTH.Teams["Blue"].Points})
+    for k, v in pairs(KOTH.Players) do
+      TriggerClientEvent("KOTH:ResetGame", k)
+      KOTH.TriggerClientEvent("KOTH:UpdatePoints", k, {Points = {Yellow = KOTH.Teams["Yellow"].Points, Green = KOTH.Teams["Green"].Points, Blue = KOTH.Teams["Blue"].Points}})
+    end
   else
     SetEntityCoords(PlayerPedId(), KOTH.Spawn.x, KOTH.Spawn.y, KOTH.Spawn.z)
     KOTH.SetNutral()
     KOTH.DeleteVehicle()
     TriggerServerEvent('KOTH:ClientInitialized', KOTH.GetPlayerLevel(), KOTH.GetPlayerXP())
-    TriggerEvent("KOTH:OpenStartUi")
+    KOTH.TriggerEvent("KOTH:OpenStartUi")
   end
   KOTH.DebugPrint("Game reset.")
 end
@@ -123,6 +126,7 @@ KOTH.Weather = "EXTRASUNNY"
 KOTH.CurrentTeam = "None"
 KOTH.PointTicker = 0
 KOTH.Winning = "None"
+KOTH.EventAuthKey = ""
 KOTH.Ready = true
 
 

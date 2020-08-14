@@ -5,20 +5,16 @@ INFINITY AND ADAPTED IT FOR THIS RESOURCE.
 
 LocalServerID = GetPlayerServerId(PlayerId())
 
-RegisterNetEvent("KOTH:SyncMumblePlayers")
-AddEventHandler("KOTH:SyncMumblePlayers", function(PTab)
-  KOTH.Mumble.Players = PTab
+KOTH.CreateEvent("KOTH:SyncMumblePlayers", function(params)
+  KOTH.Mumble.Players = params.PTab
 end)
 
-
-RegisterNetEvent("KOTH:SetMumbleChannel")
-AddEventHandler("KOTH:SetMumbleChannel", function(source, channel)
-  KOTH.Mumble.Players[source].Channel = channel
+KOTH.CreateEvent("KOTH:SetMumbleChannel", function(params)
+  KOTH.Mumble.Players[params.Player].Channel = params.Channel
 end)
 
-RegisterNetEvent("KOTH:MumbleTalking")
-AddEventHandler("KOTH:MumbleTalking", function(source, bool)
-  KOTH.Mumble.Players[source].IsTalking = bool
+KOTH.CreateEvent("KOTH:MumbleTalking", function(params)
+  KOTH.Mumble.Players[params.Player].IsTalking = params.Bool
 end)
 
 function round(num, numDecimalPlaces)
@@ -26,14 +22,14 @@ function round(num, numDecimalPlaces)
 end
 
 Citizen.CreateThread(function()
-  
+
   while KOTH.Mumble.Players[LocalServerID] == nil do
     Citizen.Wait(500)
   end
   while true do
     Citizen.Wait(0)
 
-    
+
 
     local RadioActive = KOTH.Mumble.Players[LocalServerID].IsTalking or false
 
@@ -45,14 +41,14 @@ Citizen.CreateThread(function()
 
     if not RadioActive then
       if IsControlJustPressed(0, KOTH.Mumble.Config.RadioControl) then
-        TriggerServerEvent("KOTH:MumbleTalking", true)
+        KOTH.TriggerServerEvent("KOTH:MumbleTalking", {Bool = true})
         RadioActive = true
         Citizen.CreateThread(function()
           while IsControlPressed(0, KOTH.Mumble.Config.RadioControl) do
             Citizen.Wait(0)
           end
 
-          TriggerServerEvent("KOTH:MumbleTalking", false)
+          KOTH.TriggerServerEvent("KOTH:MumbleTalking", {Bool = false})
           RadioActive = false
         end)
       end

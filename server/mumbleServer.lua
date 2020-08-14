@@ -6,21 +6,24 @@ AddEventHandler("KOTH:ClientInitialized", function()
     IsTalking = false,
     Channel = 0,
   }
-  TriggerClientEvent("KOTH:SyncMumblePlayers", source, KOTH.Mumble.Players)
+  KOTH.TriggerClientEvent("KOTH:SyncMumblePlayers", source, {PTab = KOTH.Mumble.Players})
 end)
 
-RegisterNetEvent("KOTH:SetMumbleChannel")
-AddEventHandler("KOTH:SetMumbleChannel", function(channel, src)
-  local player = src or source
-  KOTH.DebugPrint(GetPlayerName(player) .. "'s channel has been updated to " .. channel .. ".")
-  KOTH.Mumble.Players[player].Channel = channel
-  TriggerClientEvent("KOTH:SetMumbleChannel", -1, player, KOTH.Mumble.Players[player].Channel)
+KOTH.CreateEvent("KOTH:SetMumbleChannel", function(params)
+  local player = params.ply
+  KOTH.DebugPrint(GetPlayerName(player) .. "'s channel has been updated to " .. params.Channel .. ".")
+  KOTH.Mumble.Players[player].Channel = params.Channel
+  for k, v in pairs(KOTH.Players) do
+    KOTH.TriggerClientEvent("KOTH:SetMumbleChannel", k, {Player = player, Channel = KOTH.Mumble.Players[player].Channel})
+  end
 end)
 
-RegisterNetEvent("KOTH:MumbleTalking")
-AddEventHandler("KOTH:MumbleTalking", function(bool)
+KOTH.CreateEvent("KOTH:MumbleTalking", function(params)
+  local bool = params.Bool
   KOTH.Mumble.Players[source].IsTalking = bool
-  TriggerClientEvent("KOTH:MumbleTalking", -1, source, KOTH.Mumble.Players[source].IsTalking)
+  for k, v in pairs(KOTH.Players) do
+    KOTH.TriggerClientEvent("KOTH:MumbleTalking", k, {Player = params.source, Bool = KOTH.Mumble.Players[source].IsTalking})
+  end
 end)
 
 Citizen.CreateThread(function()
@@ -28,16 +31,20 @@ Citizen.CreateThread(function()
     Citizen.Wait(500)
   end
   while true do
-    Citizen.Wait(500)
+    Citizen.Wait(1000)
     for PlayerID, VoiceData in pairs(KOTH.Mumble.Players) do
       KOTH.Mumble.Players[PlayerID].PlayerPos = GetEntityCoords(GetPlayerPed(PlayerID))
     end
-    TriggerClientEvent("KOTH:SyncMumblePlayers", -1, KOTH.Mumble.Players)
+    for k, v in pairs(KOTH.Players) do
+      KOTH.TriggerClientEvent("KOTH:SyncMumblePlayers", k, {PTab = KOTH.Mumble.Players})
+    end
   end
 end)
 
 
 AddEventHandler("playerDropped", function (reason)
   KOTH.Mumble.Players[source] = nil
-  TriggerClientEvent("KOTH:SyncMumblePlayers", -1, KOTH.Mumble.Players)
+  for k, v in pairs(KOTH.Players) do
+    KOTH.TriggerClientEvent("KOTH:SyncMumblePlayers", k, {PTab = KOTH.Mumble.Players})
+  end
 end)
