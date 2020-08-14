@@ -9,13 +9,13 @@ Citizen.CreateThread(function()
 			if GetResourceKvpString("KOTH:Model") == nil then
 				SetResourceKvp("KOTH:Model", "None")
 			end
-			TriggerEvent("KOTH:OpenStartUi")
+			KOTH.TriggerEvent("KOTH:OpenStartUi")
 			NetworkSetFriendlyFireOption(KOTH.FriendlyFire)
 			SetCanAttackFriendly(PlayerPedId(), true, true)
 			DisplayRadar(KOTH.ShowMap)
 
-			TriggerEvent('koth:ui:money')
-			TriggerEvent('koth:ui:level')
+			KOTH.TriggerEvent('koth:ui:money')
+			KOTH.TriggerEvent('koth:ui:level')
 
 			return
 		end

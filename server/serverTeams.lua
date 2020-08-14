@@ -8,7 +8,7 @@ KOTH.JoinTeam = function(player, team)
     KOTH.Players[player].Team = team
   end
   KOTH.TriggerClientEvent("KOTH:SetUniform", player, {Clothes = KOTH.Teams[team].Colors, Team = team})
-  KOTH.TriggerEvent("KOTH:SetMumbleChannel", {Channel = KOTH.Teams[team].Channel, source = player})
+  KOTH.TriggerEvent("KOTH:SetMumbleChannel", {Channel = KOTH.Teams[team].Channel, ply = player})
   KOTH.GetPlayerCounts()
 end
 
@@ -47,16 +47,22 @@ KOTH.GetPlayerCounts = function()
   KOTH.Teams["Blue"].Count = BlueCount
   KOTH.Teams["Green"].Count = GreenCount
   KOTH.DebugPrint("Current player counts Y:" .. YellowCount .. " G:" .. GreenCount .. " B:" .. BlueCount .. ".")
-  KOTH.TriggerClientEvent("KOTH:UpdatePlayerCount", -1, {Yellow = YellowCount, Green = GreenCount, Blue = BlueCount})
+  for k, v in pairs(KOTH.Players) do
+    KOTH.TriggerClientEvent("KOTH:UpdatePlayerCount", k, {Yellow = YellowCount, Green = GreenCount, Blue = BlueCount})
+  end
 end
 
 KOTH.AddTeamPoints = function(team, amount)
   KOTH.Teams[team].Points = KOTH.Teams[team].Points + 1
-  TriggerClientEvent("KOTH:UpdatePoints", -1, {Yellow = KOTH.Teams["Yellow"].Points, Green = KOTH.Teams["Green"].Points, Blue = KOTH.Teams["Blue"].Points})
+  for k, v in pairs(KOTH.Players) do
+    KOTH.TriggerClientEvent("KOTH:UpdatePoints", k, {Points = {Yellow = KOTH.Teams["Yellow"].Points, Green = KOTH.Teams["Green"].Points, Blue = KOTH.Teams["Blue"].Points}})
+  end
   KOTH.DebugPrint(team .. " now has " .. KOTH.Teams[team].Points .. " points.")
   if KOTH.Teams[team].Points == KOTH.WinThreshold then
     KOTH.DebugPrint(team .. " won.")
-    TriggerClientEvent("KOTH:ShowWin", -1, team)
+    for k, v in pairs(KOTH.Players) do
+      KOTH.TriggerClientEvent("KOTH:ShowWin", k, team)
+    end
     Citizen.Wait(5000)
     KOTH.ResetGame()
   end

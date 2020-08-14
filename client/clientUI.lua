@@ -10,7 +10,7 @@ Citizen.CreateThread(function()
         if #distance < 5.0 then
           KOTH.DrawText(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z, '~g~[E]~s~ to open shop')
           if IsControlJustPressed(0, 38) then
-            TriggerEvent('koth:shop:show')
+            KOTH.TriggerEvent('koth:shop:show')
           end
         end
       end
@@ -25,8 +25,7 @@ RegisterCommand("getfuck", function(source, args, rawCommand)
   end
 end)
 
-RegisterNetEvent("KOTH:OpenStartUi")
-AddEventHandler("KOTH:OpenStartUi", function()
+KOTH.CreateEvent("KOTH:OpenStartUi", function()
   SendNUIMessage({
     KOTHUI = true,
     StartUI = true,
@@ -36,34 +35,31 @@ AddEventHandler("KOTH:OpenStartUi", function()
   KOTH.DebugPrint("Start UI Opened.")
 end)
 
-RegisterNetEvent('koth:ui:money')
-AddEventHandler('koth:ui:money', function()
-    local money = KOTH.GetMoney()
-    print(money)
-    SendNUIMessage({
-      money = money
-    })
+KOTH.CreateEvent("koth:ui:money", function()
+  local money = KOTH.GetMoney()
+  print(money)
+  SendNUIMessage({
+    money = money
+  })
 end)
 
-RegisterNetEvent('koth:ui:level')
-AddEventHandler('koth:ui:level', function()
-    local level = KOTH.GetPlayerLevel()
-    local perc = KOTH.LevelPercentage()
-    local curLvl = KOTH.GetPlayerXP()
-    local MaxLvl = KOTH.GetLevelThreshold()
-    print(level)
-    SendNUIMessage({
-      level = level,
-      perc = perc,
-      curLvl = curLvl,
-      maxLvl = MaxLvl
-    })
-    TriggerEvent('koth:ui:sendWeapons')
-    TriggerEvent('koth:ui:sendVehicles')
-  end)
+KOTH.CreateEvent("koth:ui:level", function()
+  local level = KOTH.GetPlayerLevel()
+  local perc = KOTH.LevelPercentage()
+  local curLvl = KOTH.GetPlayerXP()
+  local MaxLvl = KOTH.GetLevelThreshold()
+  print(level)
+  SendNUIMessage({
+    level = level,
+    perc = perc,
+    curLvl = curLvl,
+    maxLvl = MaxLvl
+  })
+  KOTH.TriggerEvent('koth:ui:sendWeapons')
+  KOTH.TriggerEvent('koth:ui:sendVehicles')
+end)
 
-RegisterNetEvent('koth:ui:sendWeapons')
-AddEventHandler('koth:ui:sendWeapons', function()
+KOTH.CreateEvent("koth:ui:sendWeapons", function()
   local weapons = KOTH.Weapons
   local userLvl = KOTH.GetPlayerLevel()
   SendNUIMessage({
@@ -72,8 +68,7 @@ AddEventHandler('koth:ui:sendWeapons', function()
   })
 end)
 
-RegisterNetEvent('koth:ui:sendVehicles')
-AddEventHandler('koth:ui:sendVehicles', function()
+KOTH.CreateEvent("koth:ui:sendVehicles", function()
   local vehicles = KOTH.Vehicles
   SendNUIMessage({
     vehicles = vehicles
@@ -86,13 +81,12 @@ RegisterNUICallback('koth:ui:buyWeapons', function(data)
 end)
 
 -- SHOP START
-RegisterNetEvent('koth:shop:show')
-AddEventHandler('koth:shop:show', function()
+KOTH.CreateEvent("koth:shop:show", function()
   SendNUIMessage({
     ShopUI = true
   })
   SetNuiFocus(true, true)
-end, false)
+end)
 
 
 RegisterCommand('koth:shop:hide', function(source, args, rawCommand)
@@ -200,8 +194,8 @@ KOTH.CreateEvent("KOTH:UpdatePlayerCount", function(params)
   KOTH.DebugPrint("Current player counts Y:" .. params.Yellow .. " G:" .. params.Green .. " B:" .. params.Blue .. ".")
 end)
 
-RegisterNetEvent("KOTH:ShowWin")
-AddEventHandler("KOTH:ShowWin", function(team)
+
+KOTH.CreateEvent("KOTH:ShowWin", function()
   SendNUIMessage({
     Win = true,
     WinningTeam = team
@@ -211,9 +205,8 @@ AddEventHandler("KOTH:ShowWin", function(team)
   KOTH.DebugPrint("Win screen closed.")
 end)
 
-
-RegisterNetEvent("KOTH:UpdatePoints")
-AddEventHandler("KOTH:UpdatePoints", function(tab)
+KOTH.CreateEvent("KOTH:UpdatePoints", function(params)
+  local tab = params.Points
   SendNUIMessage({
     UpdatePoints = true,
     Yellow = tab.Yellow,

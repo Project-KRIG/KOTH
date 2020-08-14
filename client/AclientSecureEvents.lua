@@ -1,6 +1,6 @@
 KOTH.CreateEvent = function(eventName, eventRoutine)
   RegisterNetEvent(eventName)
-  AddEventHandler(eventName, function(params) print("Event running: " .. eventName) if params.AuthKey == KOTH.EventAuthKey then eventRoutine(params) else KOTH.TriggerServerEvent("KOTH:KickCheater", {event = eventName}) end end)
+  AddEventHandler(eventName, function(params) if params.AuthKey == KOTH.EventAuthKey then eventRoutine(params) else KOTH.TriggerServerEvent("KOTH:KickCheater", {event = eventName}) end end)
 end
 
 KOTH.TriggerServerEvent = function(eventName, params)
