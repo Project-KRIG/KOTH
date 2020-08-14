@@ -6,6 +6,7 @@ Citizen.CreateThread(function()
   while true do 
     Citizen.Wait(5)
       for k,v in pairs(KOTH.Teams) do
+        local pos =  vector3(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z)
         local distance = (GetEntityCoords(PlayerPedId()) - vector3(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z))
         if #distance < 5.0 then
           KOTH.DrawText(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z, '~g~[E]~s~ to open shop')

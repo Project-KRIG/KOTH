@@ -1,6 +1,9 @@
 RegisterCommand("bike", function(source, args, rawCommand)
-  KOTH.CreateVehicle("tribike", 100)
+  print(args[1])
+  KOTH.CreateVehicle(args[1], 100)
 end)
+
+
 
 
 KOTH.CreateVehicle = function(model, price)
