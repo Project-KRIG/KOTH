@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 * {
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
   box-sizing: border-box;
 }
 
@@ -353,6 +353,10 @@ nav li {
   overflow: auto;
 }
 
+#wep-container {
+  color: #fff;
+}
+
 #wep-container #weapon-list {
   width: 100%;
   margin: auto;
@@ -369,15 +373,20 @@ nav li {
   background: #36444f;
   width: 24%;
   height: 160px;  
+  color: #fff;
 }
 
-
-#weapon-box img {
-
-}
 
 #weapon-box p {
+  font-weight: bold;
 }
 
 #weapon-box button {
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  background: #1e272e;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 5px 25px;
 }
