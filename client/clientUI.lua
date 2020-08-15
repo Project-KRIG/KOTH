@@ -9,7 +9,7 @@ Citizen.CreateThread(function()
         local pos =  vector3(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z)
         local distance = (GetEntityCoords(PlayerPedId()) - vector3(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z))
         if #distance < 5.0 then
-          KOTH.DrawText(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z, '~g~[E]~s~ to open shop')
+          KOTH.DrawText(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z + 1, '~g~[E]~s~ to open shop')
           if IsControlJustPressed(0, 38) then
             KOTH.TriggerEvent('koth:shop:show')
           end

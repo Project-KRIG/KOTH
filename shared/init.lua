@@ -52,7 +52,7 @@ KOTH.Teams["Yellow"] = {
   Colors = {Shirt = 5, Hat = 6, Legs = 3},
   Count = 0,
   Channel = 1,
-  ShopLocation = {x = 1376.0, y = 2797.7, z = 50.5}
+  ShopLocation = {x = 1376.0, y = 2797.7, z = 49.5}
 }
 KOTH.Teams["Green"] = {
   Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},

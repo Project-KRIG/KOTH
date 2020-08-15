@@ -13,6 +13,8 @@ Citizen.CreateThread(function()
 			NetworkSetFriendlyFireOption(KOTH.FriendlyFire)
 			SetCanAttackFriendly(PlayerPedId(), true, true)
 			DisplayRadar(KOTH.ShowMap)
+			
+			KOTH.BuildBase()
 
 			KOTH.TriggerEvent('koth:ui:money')
 			KOTH.TriggerEvent('koth:ui:level')
