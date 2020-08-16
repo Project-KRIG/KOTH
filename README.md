@@ -1,5 +1,6 @@
 King Of The Hill
 =
+Made by Neco and chip.
 
 What is KOTH?
 =
