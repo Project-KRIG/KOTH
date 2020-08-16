@@ -9,7 +9,6 @@ function move(perc, maxLvl, curLvl) {
     var lvl = document.getElementById('lvl');
     lvl.innerHTML = curLvl + "/" + maxLvl
     elem.style.width = perc + "%";
-    //elem.innerHTML = curLvl + "/" + maxLvl
 }
 
 
@@ -85,15 +84,22 @@ $(function()
         $('#money-hud').html(formatter.format(money))
       }
 
-      var buy = "Buy"
-      var notBuy = "Not available"
-      var disabled = "disabled"
+
       var weapons = event.data.weapons;
+      var vehicles = event.data.vehicles;
       userLvl = event.data.userLvl
+      vehiceleLvl = event.data.vehicleLvl;
       if (userLvl) {
         for (let [key, value] of Object.entries(weapons)) {
           $('#weapon-list').append(
-          '<div id="weapon-box"><img src="./assets/' + value.Model +'.png"><p> ' + formatter.format(value.price) + ' | Lvl: ' + value.levelReq +'</p><button id="'+ key +'" onclick="buyWeapon(this)" ' + (userLvl < value.levelReq ? disabled : null) + '>'+ (userLvl < value.levelReq ? notBuy : buy) +'</button></div>')
+          '<div id="weapon-box"><img src="./assets/' + value.Model +'.png"><p> ' + formatter.format(value.price) + ' | Lvl: ' + value.levelReq +'</p><button id="'+ key +'" onclick="buyWeapon(this)" ' + (userLvl < value.levelReq ? "disabled" : null) + '>'+ (userLvl < value.levelReq ? "Not available" : "Buy") +'</button></div>')
+        }
+      }
+
+      if (vehiceleLvl) {
+        for (let [key, value] of Object.entries(vehicles)) {
+          $('#vehicle-list').append(
+          '<div id="vehicle-box"><img src="./assets/' + value.Model +'.png"><p> ' + formatter.format(value.price) + ' | Lvl: ' + value.levelReq +'</p><button id="'+ key +'" onclick="buyWeapon(this)" ' + (lvl < value.levelReq ? "disabled" : null) + '>'+ (lvl < value.levelReq ? "Not available" : "Buy") +'</button></div>')
         }
       }
     });

@@ -390,3 +390,50 @@ nav li {
   font-size: 16px;
   padding: 5px 25px;
 }
+
+
+#veh-wrapper {
+  height: 50vh;
+  overflow: auto;
+}
+
+#veh-container {
+  color: #fff;
+}
+
+#veh-container #vehicle-list {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  margin-left: -1em;
+  display: inline-block;
+}
+
+#vehicle-box {
+  margin: 3em;
+  float: left;
+  margin-bottom: 10px;
+  text-align: center;
+  background: #36444f;
+  width: 24%;
+  height: 180px;  
+  color: #fff;
+}
+
+#vehicle-box img {
+  height: 100px;
+}
+
+#vehicle-box p {
+  font-weight: bold;
+}
+
+#vehicle-box button {
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  background: #1e272e;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 5px 25px;
+}

@@ -33,5 +33,6 @@ files {
     "client/html/style.css",
     "client/html/reset.css",
     "client/html/listener.js",
-    "client/html/assets/*.png"
+    "client/html/assets/*.png",
+    "client/html/assets/*.jpg"
 }

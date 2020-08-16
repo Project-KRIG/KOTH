@@ -6,7 +6,6 @@ Citizen.CreateThread(function()
   while true do
     Citizen.Wait(5)
       for k,v in pairs(KOTH.Teams) do
-        local pos =  vector3(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z)
         local distance = (GetEntityCoords(PlayerPedId()) - vector3(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z))
         if #distance < 5.0 then
           KOTH.DrawText(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z + 1, '~g~[E]~s~ to open shop')
@@ -70,9 +69,12 @@ KOTH.CreateEvent("koth:ui:sendWeapons", function()
 end)
 
 KOTH.CreateEvent("koth:ui:sendVehicles", function()
+  print('IS IT WORKING?')
   local vehicles = KOTH.Vehicles
+  local vehicleLvl = KOTH.GetPlayerLevel()
   SendNUIMessage({
-    vehicles = vehicles
+    vehicles = vehicles,
+    vehicleLvl = vehicleLvl
   })
 end)
 
@@ -82,7 +84,8 @@ RegisterNUICallback('koth:ui:buyWeapons', function(data)
 end)
 
 -- SHOP START
-KOTH.CreateEvent("koth:shop:show", function()
+--KOTH.CreateEvent("koth:shop:show", function()
+RegisterCommand('koth:shop:show', function(source, args, rawCommand)
   SendNUIMessage({
     ShopUI = true
   })

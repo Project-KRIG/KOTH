@@ -9,7 +9,6 @@ KOTH.CreateObject = function(object, coords)
 end
 
 KOTH.BuildBase = function()
-    print("ARE YOU EVEN RUNNING?")
     for k,v in pairs(KOTH.Teams) do
         local pos =  vector3(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z)
         KOTH.CreateObject('gr_prop_gr_bench_01a', pos)
