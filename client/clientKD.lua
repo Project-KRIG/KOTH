@@ -29,7 +29,7 @@ KOTH.CreateEvent("KOTH:Died", function()
 end)
 
 KOTH.SpawnPoint = function()
-  KOTH.TriggerEvent("KOTH:SetUniform", {Clothes = KOTH.Teams[team].Colors, Team = KOTH.CurrentTeam})
+  KOTH.TriggerEvent("KOTH:SetUniform", {Clothes = KOTH.Teams[KOTH.CurrentTeam].Colors, Team = KOTH.CurrentTeam})
 end
 
 KOTH.DefaultSpawn = function()
