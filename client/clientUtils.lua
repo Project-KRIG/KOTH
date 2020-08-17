@@ -1,10 +1,11 @@
-KOTH.CreateObject = function(object, coords)
+KOTH.CreateObject = function(object, coords, pitch, roll, yaw)
     local object = GetHashKey(object)
 
     RequestModel(object)
     if not HasModelLoaded(object) then
         Citizen.Wait(100)
     end
+    SetEntityRotation(object, pitch, roll, yaw, 0, true)
     KOTH.Object = CreateObject(object, coords.x, coords.y, coords.z, false, false, true)
 end
 
