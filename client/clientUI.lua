@@ -5,10 +5,10 @@ Citizen.CreateThread(function()
   end
   while true do
     Citizen.Wait(5)
-      for k,v in pairs(KOTH.Teams) do
-        local distance = (GetEntityCoords(PlayerPedId()) - vector3(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z))
+      for k,v in ipairs(KOTH.Shop) do
+        local distance = (GetEntityCoords(PlayerPedId()) - vector3(v.x, v.y, v.z))
         if #distance < 5.0 then
-          KOTH.DrawText(v.ShopLocation.x, v.ShopLocation.y, v.ShopLocation.z + 1, '~g~[E]~s~ to open shop')
+          KOTH.DrawText(v.x, v.y, v.z + 1, '~g~[E]~s~ to open shop')
           if IsControlJustPressed(0, 38) then
             KOTH.TriggerEvent('koth:shop:show')
           end
@@ -20,9 +20,7 @@ end)
 RegisterCommand("getfuck", function(source, args, rawCommand)
   local player = PlayerPedId()
   local coords = GetEntityCoords(player)
-  for k,v in ipairs(KOTH.Teams[KOTH.CurrentTeam].Spawns.Player) do
-    print(v.x, v.y, v.z)
-  end
+  print(coords)
 end)
 
 KOTH.CreateEvent("KOTH:OpenStartUi", function()
@@ -69,7 +67,6 @@ KOTH.CreateEvent("koth:ui:sendWeapons", function()
 end)
 
 KOTH.CreateEvent("koth:ui:sendVehicles", function()
-  print('IS IT WORKING?')
   local vehicles = KOTH.Vehicles
   local vehicleLvl = KOTH.GetPlayerLevel()
   SendNUIMessage({
@@ -79,7 +76,6 @@ KOTH.CreateEvent("koth:ui:sendVehicles", function()
 end)
 
 RegisterNUICallback('koth:ui:buyWeapons', function(data)
-  print("WEP: ", data.weapon, KOTH.Weapons[data.weapon].levelReq)
     GiveWeaponToPed(PlayerPedId(), GetHashKey(KOTH.Weapons[data.weapon].Model), 300, true, true)
     KOTH.SetMoney(KOTH.GetMoney() - KOTH.Weapons[data.weapon].price)
 end)

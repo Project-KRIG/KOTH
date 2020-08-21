@@ -52,7 +52,9 @@ KOTH.Teams["Yellow"] = {
   Colors = {Shirt = 5, Hat = 6, Legs = 3},
   Count = 0,
   Channel = 1,
-  ShopLocation = {x = 1376.0, y = 2797.7, z = 49.5}
+  ShopLocation = {
+    {x = 1376.0, y = 2797.7, z = 49.5},
+  }
 }
 KOTH.Teams["Green"] = {
   Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
@@ -61,7 +63,9 @@ KOTH.Teams["Green"] = {
   Colors = {Shirt = 0, Hat = 9, Legs = 5},
   Count = 0,
   Channel = 2,
-  ShopLocation = {x = 1723.0, y = 3199.70, z = 42.0}
+  ShopLocation = {
+    {x = 1723.0, y = 3199.70, z = 42.0}
+  } 
 }
 KOTH.Teams["Blue"] = {
   Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
@@ -70,7 +74,9 @@ KOTH.Teams["Blue"] = {
   Colors = {Shirt = 3, Hat = 7, Legs = 4},
   Count = 0,
   Channel = 3,
-  ShopLocation = {x = 1364.7, y = 3476.80, z = 35.0}
+  ShopLocation = {
+    {x = 1364.7, y = 3476.80, z = 35.0}
+  }
 }
 KOTH.Circle = {
   Coords = {x = 0.0, y = 0.0, z = 0.0},
@@ -135,12 +141,23 @@ KOTH.ShowMap = true
 
 -- SHOP
 
+
+KOTH.Shop = {
+  -- Yellow
+  {x = 1385.81, y = 2802.07, z = 50.00, p = 3.0, r = 30.0, yaw = 4.0},
+  {x = 1741.97, y = 3690.58, z = 33.55, p = 10.0, r = 30.0, yaw = 4.0},
+  -- Blue
+  {x = 1838.15, y = 3950.02, z = 32.10},
+  {x = 1409.16, y = 3480.50, z = 34.50},
+  -- Green 
+  {x = 1718.92, y = 3219.07, z = 41.40},
+  {x = 2041.24, y = 3872.82, z = 30.80}
+}
+
 KOTH.Vehicles = {
   ['Mesa'] = {Model = 'mesa3', levelReq = 2, price = 300},
   ['Buzzard'] = {Model = 'buzzard2', levelReq = 4, price = 1000}
 }
-
-
 
 KOTH.Weapons = {
   ["Pistol"] = {Model = 'weapon_pistol', levelReq = 1, price = 200},
