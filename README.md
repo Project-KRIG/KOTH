@@ -10,14 +10,14 @@ King of the Hill is a "hold the area" game mode where three teams compete agains
 Requirements
 =
 
-The most up to date version of `baseevents` from [cfx-server-data](https://github.com/citizenfx/cfx-server-data) is required to register player kills.
+The most up to date version of `baseevents` from [cfx-server-data](https://github.com/citizenfx/cfx-server-data) is required to register player kills. (<b>Please use [this](https://github.com/The-Neco/cfx-server-data) repo until PR [114](https://github.com/citizenfx/cfx-server-data/pull/114) is merged into CFX-Server-Data.</b>)
 
 How Do I install KOTH on my server?
 =
 
 It's pretty simple
 
-1. Download the latest CFX-Server-Data from [here](https://github.com/citizenfx/cfx-server-data) (Please use [this](https://github.com/The-Neco/cfx-server-data) repo until [this](https://github.com/citizenfx/cfx-server-data/pull/114) PR is merged into CFX-Server-Data.)
+1. Download the latest CFX-Server-Data from [here](https://github.com/citizenfx/cfx-server-data). (<b>Please use [this](https://github.com/The-Neco/cfx-server-data) repo until PR [114](https://github.com/citizenfx/cfx-server-data/pull/114) is merged into CFX-Server-Data.</b>)
 2. Download the latest koth from the [releases](https://github.com/The-Neco/KOTH/releases/latest) section of this repo.
 3. Drag the `KOTH` folder to the resources folder in your server.
 4. Add `ensure baseevents` to your `server.cfg`
