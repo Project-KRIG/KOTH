@@ -1,3 +1,4 @@
+  
 KOTH.CreateEvent = function(eventName, eventRoutine)
   RegisterNetEvent(eventName)
   AddEventHandler(eventName, function(params) if params.AuthKey == KOTH.EventAuthKey then eventRoutine(params) else KOTH.TriggerServerEvent("KOTH:KickCheater", {event = eventName}) end end)
