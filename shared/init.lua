@@ -130,21 +130,6 @@ KOTH.Ready = true
 -- UI
 KOTH.ShowMap = true
 
--- SHOP
-
-
-KOTH.Shop = {
-  -- Yellow
-  {x = 1385.81, y = 2802.07, z = 50.00, p = 3.0, r = 30.0, yaw = 4.0},
-  {x = 1741.97, y = 3690.58, z = 33.55, p = 10.0, r = 30.0, yaw = 4.0},
-  -- Blue
-  {x = 1838.15, y = 3950.02, z = 32.10},
-  {x = 1409.16, y = 3480.50, z = 34.50},
-  -- Green
-  {x = 1718.92, y = 3219.07, z = 41.40},
-  {x = 2041.24, y = 3872.82, z = 30.80},
-}
-
 KOTH.Vehicles = {
   ['Mesa'] = {Model = 'mesa3', levelReq = 2, price = 300},
   ['Buzzard'] = {Model = 'buzzard2', levelReq = 4, price = 1000}
