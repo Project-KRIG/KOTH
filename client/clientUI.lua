@@ -91,9 +91,10 @@ end)
 RegisterNUICallback('koth:ui:buyVehicles', function(data)
   if KOTH.Vehicles[data.vehicle].type == 'land' then
     local spawn = KOTH.Teams[KOTH.CurrentTeam].Spawns.Car
-    KOTH.SpawnBoughtVehicle('mesa3', 300, spawn.x, spawn.y, spawn.z, 201.00)
+    KOTH.SpawnBoughtVehicle(KOTH.Vehicles[data.vehicle].Model, 300, spawn.x, spawn.y, spawn.z, spawn.h)
   elseif KOTH.Vehicles[data.vehicle].type == 'air' then
     local heliSpawn = KOTH.Teams[KOTH.CurrentTeam].Spawns.Helicopter
+    KOTH.SpawnBoughtVehicle(KOTH.Vehicles[data.vehicle].Model, 300, heliSpawn.x, heliSpawn.y, heliSpawn.z, heliSpawn.h)
   end
 end)
 
