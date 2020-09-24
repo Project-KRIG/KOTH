@@ -132,36 +132,36 @@ $(function()
 });
 
 function StartPressed() {
-  $.post('http://koth/WelcomeClosed', JSON.stringify({}));
+  $.post('https://KOTH/WelcomeClosed', JSON.stringify({}));
 }
 
 function Gender(Gender) {
   if (Gender == "Male") {
-    $.post('http://koth/GenderSelect', JSON.stringify({Gender: true}));
+    $.post('https://KOTH/GenderSelect', JSON.stringify({Gender: true}));
   } else {
-    $.post('http://koth/GenderSelect', JSON.stringify({Gender: false}));
+    $.post('https://KOTH/GenderSelect', JSON.stringify({Gender: false}));
   }
 }
 
 function Team(team){
-  $.post('http://koth/TeamSelect', JSON.stringify({Team: team}));
+  $.post('https://KOTH/TeamSelect', JSON.stringify({Team: team}));
 }
 
 // SHOP
 function closeShop() {
-  $.post('http://koth/koth:shop:close', JSON.stringify({}));
+  $.post('https://KOTH/koth:shop:close', JSON.stringify({}));
 }
 
 function buyWeapon(elem) {
   console.log(elem.id)
-  $.post('http://koth/koth:ui:buyWeapons', JSON.stringify({
+  $.post('https://KOTH/koth:ui:buyWeapons', JSON.stringify({
     weapon: elem.id
   }))
 }
 
 function buyVehicle(elem) {
   console.log(elem.id)
-  $.post('http://koth/koth:ui:buyVehicles', JSON.stringify({
+  $.post('https://KOTH/koth:ui:buyVehicles', JSON.stringify({
     vehicle: elem.id
   }))
 }
