@@ -79,5 +79,7 @@ KOTH.DiscordLog = function(name, event, action, extra)
       }
     ]
   }]]
-  PerformHttpRequest(KOTH.DiscordWebhook, function(Error, Content, Head) end, 'POST', message, { ['Content-Type'] = 'application/json' })
+  if KOTH.DiscordWebhook ~= "" then
+    PerformHttpRequest(KOTH.DiscordWebhook, function(Error, Content, Head) end, 'POST', message, { ['Content-Type'] = 'application/json' })
+  end
 end
