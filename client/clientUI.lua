@@ -81,8 +81,12 @@ RegisterNUICallback('koth:ui:buyWeapons', function(data)
 end)
 
 RegisterNUICallback('koth:ui:buyVehicles', function(data)
-  print("FUCK YOU BITCH")
-  print('You bought ' .. data.vehicle)
+  if KOTH.Vehicles[data.vehicle].type == 'land' then
+    local spawn = KOTH.Teams[KOTH.CurrentTeam].Spawns.Car
+    KOTH.SpawnBoughtVehicle('mesa3', 300, spawn.x, spawn.y, spawn.z, 201.00)
+  elseif KOTH.Vehicles[data.vehicle].type == 'air' then
+    local heliSpawn = KOTH.Teams[KOTH.CurrentTeam].Spawns.Helicopter
+  end
 end)
 
 -- SHOP START

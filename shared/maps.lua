@@ -14,7 +14,7 @@ Citizen.CreateThread(function()
     [2] = {
       Circle = {Coords = {x = 1882.54, y = 3786.0, z = 32.8061},Size = 200.0,PlayersInside = {}},
       Spawns = {
-        ["Yellow"] = {Player = {x = 1732.87, y = 3684.40, z = 34.7}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
+        ["Yellow"] = {Player = {x = 1732.87, y = 3684.40, z = 34.7}, Car = {x = 1719.49, y = 3674.17, z = 34.69, h = 201.66}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
         ["Blue"] = {Player = {x = 1833.72, y = 3958.39, z = 33.22}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
         ["Green"] = {Player = {x = 2044.645, y = 3866.09, z = 31.94}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
       },
