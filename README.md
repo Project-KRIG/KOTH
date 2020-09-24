@@ -17,11 +17,12 @@ How Do I install KOTH on my server?
 
 It's pretty simple
 
-1. Download the latest koth from the [releases](https://github.com/The-Neco/KOTH/releases/latest) section of this repo.
-2. Drag the `koth` folder to the resources folder in your server. (Make sure the folder name is all lowercase `koth` otherwise the UI will not work)
-3. Add `ensure baseevents` to your `server.cfg`
-4. Add `ensure koth` to your `server.cfg`
-5. Start your server and your done!
+1. Download the latest CFX-Server-Data from [here](https://github.com/citizenfx/cfx-server-data) (Please use [this](https://github.com/The-Neco/cfx-server-data) repo until [this](https://github.com/citizenfx/cfx-server-data/pull/114) PR is merged into CFX-Server-Data.)
+2. Download the latest koth from the [releases](https://github.com/The-Neco/KOTH/releases/latest) section of this repo.
+3. Drag the `KOTH` folder to the resources folder in your server.
+4. Add `ensure baseevents` to your `server.cfg`
+5. Add `ensure KOTH` to your `server.cfg`
+6. Start your server and your done!
 
 Server Configuration
 =
