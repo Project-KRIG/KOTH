@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 * {
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -54,8 +55,6 @@ button {
   outline: none;
   cursor: pointer;
 }
-
-
 
 
 @-webkit-keyframes buzz {
@@ -322,18 +321,21 @@ button {
 }
 
 .shop-container header {
-  background-color: #fff;
-  color: #1e272e;
+  background-color: #191f24;
+  color: #fff;
   position: absolute;
   left: 0;
   right: 0;
   margin: 0;
+
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
   
 }
 
 .shop-title {
   float: left;
   margin: 1em;
+  font-size: 28px;
 }
 
 nav {
@@ -352,6 +354,24 @@ nav li {
   margin: 1em;
 }
 
+nav li button {
+  background: #1e272e;
+  padding: 10px;
+  border: none;
+  outline: none;
+  
+  color: #fff;
+  font-size: 16px;
+
+  font-weight: 500;
+
+  transition: .2s;
+}
+
+nav li button:hover {
+  transition: .2s;
+  background: #36444f;
+}
 
 #items-container, #wep-container, #veh-container {
   padding: 5em 0;
