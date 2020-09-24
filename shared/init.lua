@@ -140,7 +140,7 @@ KOTH.Shop = {
   -- Blue
   {x = 1838.15, y = 3950.02, z = 32.10},
   {x = 1409.16, y = 3480.50, z = 34.50},
-  -- Green 
+  -- Green
   {x = 1718.92, y = 3219.07, z = 41.40},
   {x = 2041.24, y = 3872.82, z = 30.80},
 }
@@ -162,3 +162,9 @@ KOTH.Weapons = {
   ["Knife"] = {Model = 'weapon_knife', levelReq = 5, price = 200},
   ["Special Carbine"] = {Model = 'weapon_specialcarbine', levelReq = 5, price = 200},
 }
+
+KOTH.DebugPrint = function(text)
+  if KOTH.Debug then
+    print("[^5KOTH^7] ^1DEBUG^7: ^3" .. text .. "^7")
+  end
+end

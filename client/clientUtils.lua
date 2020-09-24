@@ -16,16 +16,8 @@ KOTH.BuildBase = function()
     for k,v in ipairs(KOTH.Shop) do
         local pos =  vector3(v.x, v.y, v.z)
         KOTH.CreateObject('gr_prop_gr_bench_01a', pos, v.p, v.r, v.yaw)
-        print(v.p, v.r, v.yaw)
     end
 end
-
--- DEV COMMAND
-RegisterCommand("bike", function(source, args, rawCommand)
-  print(args[1])
-  KOTH.CreateVehicle(args[1], 100)
-end)
-
 
 KOTH.CreateVehicle = function(model, price)
 if KOTH.GetMoney() > price then
@@ -63,7 +55,7 @@ end
 end
 
 
-KOTH.SpawnBoughtVehicle = function(model, price, coords, heading) 
+KOTH.SpawnBoughtVehicle = function(model, price, coords, heading)
   if KOTH.GetMoney() > price then
 
     if KOTH.Vehicle ~= nil then
@@ -87,7 +79,6 @@ KOTH.SpawnBoughtVehicle = function(model, price, coords, heading)
     SetPedIntoVehicle(PlayerPedId(), KOTH.Vehicle, -1)
     KOTH.DebugPrint("Ped set into vehicle.")
     KOTH.SetMoney(KOTH.GetMoney()-price)
-    
+
   end
 end
-  

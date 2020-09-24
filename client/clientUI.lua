@@ -35,7 +35,6 @@ end)
 
 KOTH.CreateEvent("koth:ui:money", function()
   local money = KOTH.GetMoney()
-  print(money)
   SendNUIMessage({
     money = money
   })
@@ -46,7 +45,6 @@ KOTH.CreateEvent("koth:ui:level", function()
   local perc = KOTH.LevelPercentage()
   local curLvl = KOTH.GetPlayerXP()
   local MaxLvl = KOTH.GetLevelThreshold()
-  print(level)
   SendNUIMessage({
     level = level,
     perc = perc,
