@@ -26,6 +26,13 @@ RegisterCommand("getfuck", function(source, args, rawCommand)
   print(coords)
 end)
 
+KOTH.CreateEvent("KOTH:CopyToClipboard", function(params)
+  local message = params.message
+  SendNUIMessage({
+    Copy = message,
+  })
+end)
+
 KOTH.CreateEvent("KOTH:OpenStartUi", function()
   SendNUIMessage({
     KOTHUI = true,

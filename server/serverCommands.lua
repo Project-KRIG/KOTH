@@ -15,10 +15,13 @@ RegisterCommand("help", function(source, args, rawCommand)
 end)
 
 RegisterCommand("bugreport", function(source, args, rawCommand)
-  TriggerClientEvent("chat:addMessage", source, "[^5KOTH^7]: Bugreport link coppied to your clipboard, paste")
-  TriggerClientEvent("chat:addMessage", source, "[^5KOTH^7]: this into your browser and fill out the fields.")
+  local params = {}
+  params.message = "https://github.com/Project-KRIG/KOTH/issues/new"
+  KOTH.TriggerClientEvent("KOTH:CopyToClipboard", source, params)
+  KOTH.SendChatMessage(source, "[^5KOTH^7]: Bugreport link coppied to your clipboard, paste")
+  KOTH.SendChatMessage(source, "[^5KOTH^7]: this into your browser and fill out the fields.")
 end)
 
 RegisterCommand("kill", function(source, args, rawCommand)
-  SetEntityHealth(GetPlayerPed(source), 0.0)
+  KOTH.TriggerClientEvent("KOTH:Kill", source)
 end)
