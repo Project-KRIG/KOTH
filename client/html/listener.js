@@ -31,6 +31,8 @@ $(function()
         document.getElementById("KOTHUI").style.display = "block";
       } else if (event.data.KOTHUI == false) {
         document.getElementById("KOTHUI").style.display = "none";
+        document.getElementById("weapon-list").innerHTML = "";
+        document.getElementById("vehicle-list").innerHTML = "";
       }
       if (event.data.StartUI == true) {
         document.getElementById("Welcome").style.display = "block";

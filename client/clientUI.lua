@@ -99,8 +99,7 @@ RegisterNUICallback('koth:ui:buyVehicles', function(data)
 end)
 
 -- SHOP START
---KOTH.CreateEvent("koth:shop:show", function()
-RegisterCommand('koth:shop:show', function(source, args, rawCommand)
+KOTH.CreateEvent("koth:shop:show", function()
   SendNUIMessage({
     ShopUI = true
   })
