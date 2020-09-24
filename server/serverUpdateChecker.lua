@@ -10,7 +10,7 @@ end
 KOTH.VersionFile = LoadResourceFile(GetCurrentResourceName(), "version.json")
 KOTH.Version = json.decode(KOTH.VersionFile).version
 
-PerformHttpRequest("https://raw.githubusercontent.com/The-Neco/KOTH/master/version.json", function (errorCode, resultData, resultHeaders)
+PerformHttpRequest("https://raw.githubusercontent.com/Project-KRIG/KOTH/master/version.json", function (errorCode, resultData, resultHeaders)
   print("^1==================================================================================\n^7[^5KOTH^7] Checking if ^5KOTH^7 is up to date")
   if resultData ~= nil then
     local data = json.decode(resultData)
