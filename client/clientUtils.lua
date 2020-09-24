@@ -60,7 +60,7 @@ end
 end
 
 
-KOTH.SpawnBoughtVehicle = function(model, price, coords, heading)
+KOTH.SpawnBoughtVehicle = function(model, price, x, y, z, heading) 
   if KOTH.GetMoney() > price then
 
     if KOTH.Vehicle ~= nil then
@@ -78,7 +78,7 @@ KOTH.SpawnBoughtVehicle = function(model, price, coords, heading)
     Citizen.Wait(0)
     end
 
-    KOTH.Vehicle = CreateVehicle(model, coords, heading, true)
+    KOTH.Vehicle = CreateVehicle(model, x, y, z, heading, true)
     KOTH.DebugPrint("Vehicle Created.")
     SetModelAsNoLongerNeeded(model)
     SetPedIntoVehicle(PlayerPedId(), KOTH.Vehicle, -1)

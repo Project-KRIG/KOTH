@@ -131,8 +131,8 @@ KOTH.Ready = true
 KOTH.ShowMap = true
 
 KOTH.Vehicles = {
-  ['Mesa'] = {Model = 'mesa3', levelReq = 2, price = 300},
-  ['Buzzard'] = {Model = 'buzzard2', levelReq = 4, price = 1000}
+  ['Mesa'] = {Model = 'mesa3', levelReq = 2, price = 300, type="land"},
+  ['Buzzard'] = {Model = 'buzzard2', levelReq = 4, price = 1000, type="air"}
 }
 
 KOTH.Weapons = {
