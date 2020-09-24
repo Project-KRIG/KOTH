@@ -5,27 +5,24 @@ KOTH.CreateObject = function(object, coords, pitch, roll, yaw)
     if not HasModelLoaded(object) then
         Citizen.Wait(100)
     end
-    CreateObject(object, coords.x, coords.y, coords.z, false, false, true)
-
-    local handle = object
-    SetEntityRotation(handle, pitch, roll, yaw, 2, true)
+    object = CreateObject(object, coords.x, coords.y, coords.z, false, false, true)
+    PlaceObjectOnGroundProperly(object)
+    SetEntityRotation(object, pitch, roll, yaw, 2, true)
+    FreezeEntityPosition(object, true)
+    SetEntityAsMissionEntity(object)
+    return object
 end
 
 
 KOTH.BuildBase = function()
-    for k,v in ipairs(KOTH.Shop) do
-        local pos =  vector3(v.x, v.y, v.z)
-        KOTH.CreateObject('gr_prop_gr_bench_01a', pos, v.p, v.r, v.yaw)
-        print(v.p, v.r, v.yaw)
+  for k,v in pairs(KOTH.Teams) do
+    KOTH.Teams[k].ShopObj = KOTH.Teams[k].ShopObj or 0
+    if not DoesEntityExist(KOTH.Teams[k].ShopObj) then
+      local pos =  vector3(v.Spawns.Shop.x, v.Spawns.Shop.y, v.Spawns.Shop.z)
+      KOTH.Teams[k].ShopObj = KOTH.CreateObject('gr_prop_gr_bench_01a', pos, v.Spawns.Shop.p, v.Spawns.Shop.r, v.Spawns.Shop.yaw)
     end
+  end
 end
-
--- DEV COMMAND
-RegisterCommand("bike", function(source, args, rawCommand)
-  print(args[1])
-  KOTH.CreateVehicle(args[1], 100)
-end)
-
 
 KOTH.CreateVehicle = function(model, price)
 if KOTH.GetMoney() > price then
@@ -87,7 +84,6 @@ KOTH.SpawnBoughtVehicle = function(model, price, x, y, z, heading)
     SetPedIntoVehicle(PlayerPedId(), KOTH.Vehicle, -1)
     KOTH.DebugPrint("Ped set into vehicle.")
     KOTH.SetMoney(KOTH.GetMoney()-price)
-    
+
   end
 end
-  

@@ -37,9 +37,6 @@ KOTH.TriggerEvent = function(eventName, params)
   if not params then
     params = {}
   end
-  for k, v in pairs(params) do
-    print("test",k,v)
-  end
   params.AuthKey = KOTH.EventAuthKey
   TriggerEvent(eventName, params)
 end

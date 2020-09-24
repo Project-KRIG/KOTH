@@ -3,12 +3,15 @@ Citizen.CreateThread(function()
   while not KOTH.Ready do
     Citizen.Wait(500)
   end
+  while KOTH.Teams["Yellow"].Spawns.Shop == nil do
+    Citizen.Wait(500)
+  end
   while true do
     Citizen.Wait(5)
-      for k,v in ipairs(KOTH.Shop) do
-        local distance = (GetEntityCoords(PlayerPedId()) - vector3(v.x, v.y, v.z))
+      for k,v in pairs(KOTH.Teams) do
+        local distance = (GetEntityCoords(PlayerPedId()) - vector3(v.Spawns.Shop.x, v.Spawns.Shop.y, v.Spawns.Shop.z))
         if #distance < 5.0 then
-          KOTH.DrawText(v.x, v.y, v.z + 1, '~g~[E]~s~ to open shop')
+          KOTH.DrawText(v.Spawns.Shop.x, v.Spawns.Shop.y, v.Spawns.Shop.z + 1, '~g~[E]~s~ to open shop')
           if IsControlJustPressed(0, 38) then
             KOTH.TriggerEvent('koth:shop:show')
           end
@@ -35,7 +38,6 @@ end)
 
 KOTH.CreateEvent("koth:ui:money", function()
   local money = KOTH.GetMoney()
-  print(money)
   SendNUIMessage({
     money = money
   })
@@ -46,7 +48,6 @@ KOTH.CreateEvent("koth:ui:level", function()
   local perc = KOTH.LevelPercentage()
   local curLvl = KOTH.GetPlayerXP()
   local MaxLvl = KOTH.GetLevelThreshold()
-  print(level)
   SendNUIMessage({
     level = level,
     perc = perc,

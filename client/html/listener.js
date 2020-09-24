@@ -80,7 +80,6 @@ $(function()
 
       if (event.data.money != null) {
         money = event.data.money
-        console.log(money)
         $('#money-hud').html(formatter.format(money))
       }
 
