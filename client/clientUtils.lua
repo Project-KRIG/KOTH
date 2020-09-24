@@ -87,3 +87,18 @@ KOTH.SpawnBoughtVehicle = function(model, price, coords, heading)
 
   end
 end
+
+Citizen.CreateThread(function()
+  while not KOTH.Ready do
+    Citizen.Wait(500)
+  end
+  Citizen.Wait(5000)
+  while true do
+    local playercount = 0
+    for k, v in pairs(KOTH.Mumble.Players) do
+      playercount = playercount + 1
+    end
+		SetRichPresence("KOTH: " .. playercount .. " Players.")
+		Citizen.Wait(60000)
+  end
+end)
