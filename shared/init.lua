@@ -7,7 +7,7 @@ KOTH.PointTimer = 5 -- Time in seconds it takes for the winning team to gain a p
 KOTH.PrioZoneTimer = 60 -- Time in seconds it takes for the Priority Circle to move
 KOTH.WinThreshold = 100 -- Amount of points required to win
 KOTH.Spawn = {x = -75.5505, y = -819.929, z = 326.175} -- Set spawn for players who have not selected a team.
-KOTH.LockTeamsIfUneaven = false -- Lock the teams if they are uneven.
+KOTH.LockTeamsIfUneaven = true -- Lock the teams if they are uneven.
 KOTH.FriendlyFire = true -- Toggle friendly fire.
 KOTH.TimeEnabled = true -- Wheather time should be frozen.
 KOTH.WeatherEnabled = true -- Toggle weather enabled.
@@ -22,7 +22,7 @@ KOTH.WeatherTypes = {
   "SMOG",
   "FOGGY",
 }
-KOTH.DiscordWebhook = "***REMOVED***"
+KOTH.DiscordWebhook = ""
 
 
 --[[ MUMBLE CONFIG ]]
