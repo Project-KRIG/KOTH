@@ -46,15 +46,12 @@ KOTH.Mumble.Players = {}
 KOTH.Mumble.ClientData = {}
 
 KOTH.Teams["Yellow"] = {
-  Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
+  Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 100.0, y = 200.0, z = 300.0, h = 0.0}},
   Players = {},
   Points = 0,
   Colors = {Shirt = 5, Hat = 6, Legs = 3},
   Count = 0,
   Channel = 1,
-  ShopLocation = {
-    {x = 1376.0, y = 2797.7, z = 49.5},
-  }
 }
 KOTH.Teams["Green"] = {
   Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
@@ -63,9 +60,6 @@ KOTH.Teams["Green"] = {
   Colors = {Shirt = 0, Hat = 9, Legs = 5},
   Count = 0,
   Channel = 2,
-  ShopLocation = {
-    {x = 1723.0, y = 3199.70, z = 42.0}
-  } 
 }
 KOTH.Teams["Blue"] = {
   Spawns = {Player = {x = 0.0, y = 0.0, z = 0.0}, Car = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}, Helicopter = {x = 0.0, y = 0.0, z = 0.0, h = 0.0}},
@@ -74,9 +68,6 @@ KOTH.Teams["Blue"] = {
   Colors = {Shirt = 3, Hat = 7, Legs = 4},
   Count = 0,
   Channel = 3,
-  ShopLocation = {
-    {x = 1364.7, y = 3476.80, z = 35.0}
-  }
 }
 KOTH.Circle = {
   Coords = {x = 0.0, y = 0.0, z = 0.0},
@@ -151,7 +142,7 @@ KOTH.Shop = {
   {x = 1409.16, y = 3480.50, z = 34.50},
   -- Green 
   {x = 1718.92, y = 3219.07, z = 41.40},
-  {x = 2041.24, y = 3872.82, z = 30.80}
+  {x = 2041.24, y = 3872.82, z = 30.80},
 }
 
 KOTH.Vehicles = {

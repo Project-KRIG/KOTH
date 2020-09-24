@@ -80,6 +80,11 @@ RegisterNUICallback('koth:ui:buyWeapons', function(data)
     KOTH.SetMoney(KOTH.GetMoney() - KOTH.Weapons[data.weapon].price)
 end)
 
+RegisterNUICallback('koth:ui:buyVehicles', function(data)
+  print("FUCK YOU BITCH")
+  print('You bought ' .. data.vehicle)
+end)
+
 -- SHOP START
 --KOTH.CreateEvent("koth:shop:show", function()
 RegisterCommand('koth:shop:show', function(source, args, rawCommand)

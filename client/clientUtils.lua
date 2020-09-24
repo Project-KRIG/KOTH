@@ -20,14 +20,52 @@ KOTH.BuildBase = function()
     end
 end
 
+-- DEV COMMAND
 RegisterCommand("bike", function(source, args, rawCommand)
-    print(args[1])
-    KOTH.CreateVehicle(args[1], 100)
-  end)
- 
+  print(args[1])
+  KOTH.CreateVehicle(args[1], 100)
+end)
+
 
 KOTH.CreateVehicle = function(model, price)
+if KOTH.GetMoney() > price then
+  if KOTH.Vehicle ~= nil then
+    KOTH.DebugPrint("Player had a vehicle.")
+    if DoesEntityExist(KOTH.Vehicle) then
+      DeleteVehicle(KOTH.Vehicle)
+      KOTH.DebugPrint("Old vehicle deleted.")
+    end
+    KOTH.Vehicle = nil
+  end
+  local model = GetHashKey(model)
+  RequestModel(model)
+  while not HasModelLoaded(model) do
+    Citizen.Wait(0)
+  end
+  KOTH.Vehicle = CreateVehicle(model, GetEntityCoords(PlayerPedId()), GetEntityHeading(PlayerPedId()), true)
+  KOTH.DebugPrint("Vehicle Created.")
+  SetModelAsNoLongerNeeded(model)
+  SetPedIntoVehicle(PlayerPedId(), KOTH.Vehicle, -1)
+  KOTH.DebugPrint("Ped set into vehicle.")
+  KOTH.SetMoney(KOTH.GetMoney()-price)
+end
+end
+
+KOTH.DeleteVehicle = function()
+if KOTH.Vehicle ~= nil then
+  KOTH.DebugPrint("Player had a vehicle.")
+  if DoesEntityExist(KOTH.Vehicle) then
+    DeleteVehicle(KOTH.Vehicle)
+    KOTH.DebugPrint("Old vehicle deleted.")
+  end
+  KOTH.Vehicle = nil
+end
+end
+
+
+KOTH.SpawnBoughtVehicle = function(model, price, coords, heading) 
   if KOTH.GetMoney() > price then
+
     if KOTH.Vehicle ~= nil then
       KOTH.DebugPrint("Player had a vehicle.")
       if DoesEntityExist(KOTH.Vehicle) then
@@ -36,28 +74,20 @@ KOTH.CreateVehicle = function(model, price)
       end
       KOTH.Vehicle = nil
     end
+
     local model = GetHashKey(model)
     RequestModel(model)
     while not HasModelLoaded(model) do
-      Citizen.Wait(0)
+    Citizen.Wait(0)
     end
-    KOTH.Vehicle = CreateVehicle(model, GetEntityCoords(PlayerPedId()), GetEntityHeading(PlayerPedId()), true)
+
+    KOTH.Vehicle = CreateVehicle(model, coords, heading, true)
     KOTH.DebugPrint("Vehicle Created.")
     SetModelAsNoLongerNeeded(model)
     SetPedIntoVehicle(PlayerPedId(), KOTH.Vehicle, -1)
     KOTH.DebugPrint("Ped set into vehicle.")
     KOTH.SetMoney(KOTH.GetMoney()-price)
-  end
-end
-  
-KOTH.DeleteVehicle = function()
-  if KOTH.Vehicle ~= nil then
-    KOTH.DebugPrint("Player had a vehicle.")
-    if DoesEntityExist(KOTH.Vehicle) then
-      DeleteVehicle(KOTH.Vehicle)
-      KOTH.DebugPrint("Old vehicle deleted.")
-    end
-    KOTH.Vehicle = nil
+    
   end
 end
   

@@ -99,7 +99,7 @@ $(function()
       if (vehiceleLvl) {
         for (let [key, value] of Object.entries(vehicles)) {
           $('#vehicle-list').append(
-          '<div id="vehicle-box"><img src="./assets/' + value.Model +'.png"><p> ' + formatter.format(value.price) + ' | Lvl: ' + value.levelReq +'</p><button id="'+ key +'" onclick="buyWeapon(this)" ' + (lvl < value.levelReq ? "disabled" : null) + '>'+ (lvl < value.levelReq ? "Not available" : "Buy") +'</button></div>')
+          '<div id="vehicle-box"><img src="./assets/' + value.Model +'.png"><p> ' + formatter.format(value.price) + ' | Lvl: ' + value.levelReq +'</p><button id="'+ key +'" onclick="buyVehicle(this)" ' + (lvl < value.levelReq ? "disabled" : null) + '>'+ (lvl < value.levelReq ? "Not available" : "Buy") +'</button></div>')
         }
       }
     });
@@ -156,5 +156,12 @@ function buyWeapon(elem) {
   console.log(elem.id)
   $.post('http://koth/koth:ui:buyWeapons', JSON.stringify({
     weapon: elem.id
+  }))
+}
+
+function buyVehicle(elem) {
+  console.log(elem.id)
+  $.post('http://koth/koth:ui:buyVehicles', JSON.stringify({
+    vehicle: elem.id
   }))
 }
