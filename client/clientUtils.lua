@@ -60,7 +60,7 @@ end
 end
 
 
-KOTH.SpawnBoughtVehicle = function(model, price, x, y, z, heading) 
+KOTH.SpawnBoughtVehicle = function(model, price, x, y, z, heading)
   if KOTH.GetMoney() > price then
 
     if KOTH.Vehicle ~= nil then
@@ -87,6 +87,10 @@ KOTH.SpawnBoughtVehicle = function(model, price, x, y, z, heading)
 
   end
 end
+
+KOTH.CreateEvent("KOTH:Kill", function()
+  SetEntityHealth(PlayerPedId(), 0.0)
+end)
 
 Citizen.CreateThread(function()
   while not KOTH.Ready do

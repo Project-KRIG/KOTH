@@ -83,6 +83,10 @@ $(function()
         $('#money-hud').html(formatter.format(money))
       }
 
+      if (event.data.Copy != null) {
+        setClipboard(event.data.Copy)
+      }
+
 
       var weapons = event.data.weapons;
       var vehicles = event.data.vehicles;
@@ -163,4 +167,14 @@ function buyVehicle(elem) {
   $.post('https://KOTH/koth:ui:buyVehicles', JSON.stringify({
     vehicle: elem.id
   }))
+}
+
+function setClipboard(value) {
+  var tempInput = document.createElement("input");
+  tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+  tempInput.value = value;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
 }
