@@ -5,8 +5,11 @@ KOTH.CreateObject = function(object, coords, pitch, roll, yaw)
     if not HasModelLoaded(object) then
         Citizen.Wait(100)
     end
-    CreateObject(object, coords.x, coords.y, coords.z, false, false, true)
+    object = CreateObject(object, coords.x, coords.y, coords.z, false, false, true)
+    PlaceObjectOnGroundProperly(object)
     SetEntityRotation(object, pitch, roll, yaw, 2, true)
+    FreezeEntityPosition(object, true)
+    SetEntityAsMissionEntity(object)
     return object
 end
 
