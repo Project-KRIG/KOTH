@@ -58,10 +58,37 @@ $(function()
         document.getElementById(unlock).disabled = "";
       }
       if (event.data.ShopUI == true) {
-        document.getElementById("Shop").style.display = "block";
-      } else if (event.data.ShopUI == false) {
-        document.getElementById("Shop").style.display = "none";
+        $("#Shop").show();
+
+        var weapons = event.data.weapons;
+        var vehicles = event.data.vehicles;
+        userLvl = event.data.userLvl
+        vehiceleLvl = event.data.vehicleLvl;
+        
+        // Weapons
+        if (userLvl) {
+          for (let [key, value] of Object.entries(weapons)) {
+            $('#weapon-list').append(
+            '<div id="weapon-box"><img src="./assets/' + value.Model +'.png"><p> ' + formatter.format(value.price) + ' | Lvl: ' + value.levelReq +'</p><button id="'+ key +'" onclick="buyWeapon(this)" ' + (userLvl < value.levelReq ? "disabled" : null) + '>'+ (userLvl < value.levelReq ? "Not available" : "Buy") +'</button></div>')
+          }
+        }
+
+        // Vehicles
+        if (vehiceleLvl) {
+          for (let [key, value] of Object.entries(vehicles)) {
+            $('#vehicle-list').append(
+            '<div id="vehicle-box"><img src="./assets/' + value.Model +'.png"><p> ' + formatter.format(value.price) + ' | Lvl: ' + value.levelReq +'</p><button id="'+ key +'" onclick="buyVehicle(this)" ' + (lvl < value.levelReq ? "disabled" : null) + '>'+ (lvl < value.levelReq ? "Not available" : "Buy") +'</button></div>')
+          }
+        }
+
       }
+      else if (event.data.ShopUI == false) {
+        $("#Shop").hide();
+        $("#weapon-list").append('');
+        $("#vehicle-list").append('');
+      }
+
+
       if (event.data.PlayerCounts == true) {
         $("#Yellow").html("Yellow: " + event.data.Yellow + " players").css("font-family", 'Montserrat');
         $("#Green").html("Green: " + event.data.Green + " players").css("font-family", 'Montserrat');
